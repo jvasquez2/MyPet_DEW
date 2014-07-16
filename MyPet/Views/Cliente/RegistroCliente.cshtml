@@ -1,0 +1,255 @@
+﻿@model MyPet.Models.Cliente
+@{
+    ViewBag.Title = "RegistroCliente";
+
+    SelectList sexo = (SelectList)ViewBag.sexo;
+    SelectList pais = (SelectList)ViewBag.pais;
+    SelectList ciudad = (SelectList)ViewBag.ciudad;
+    SelectList distrito = (SelectList)ViewBag.distrito;
+}
+
+<title>RegistroCliente</title>
+
+
+<link rel="stylesheet" type="text/css" href="/Content/css/style.css"/>
+<body background="green">
+	<!-- Header -->
+    
+@using (Html.BeginForm())
+            { 
+<header>
+    <div class="inner">
+        <h1 class="logo">
+        <a href="../Index/Inicio">Pet clinic</a></h1>
+        <div class="fright">
+            <div class="header-meta">	
+            	<h1 align="left">REGISTRO DE CLIENTES</h1>
+                <div class="col-elem">
+                    ¿Problemas con su mascota?<br>
+                    Llámenos ahora: 
+                    <span class="phone">
+                        993-777-123
+                    </span>
+                </div>
+            </div>
+        </div><br><br>
+        <h5> * Indica que el campo es obligatorio</h5>
+		<hr>
+			<h3>Información De Cuenta</h3>
+		<hr>
+		<table style="height: 168px; width: 586px; ">
+			<tr style="width: 855px; ">
+				<td style="width: 59px; height: 94px">
+				<td style="width: 127px; ">
+					<div class="milabel">
+						<label>* Correo electrónico:	</label>
+					</div>
+				<td style="width: 281px; ">
+                    <div class="inputt" style="width: 229px;">@Html.EditorFor(Model=>Model.email)</div>	
+                    	<br>
+				</td>
+			</tr>
+			
+			<tr style="width: 855px; ">
+				<td style="width: 106px; ">
+				<td style="width: 151px; ">
+					<div class="milabel">
+						<label>* Contraseña:	</label>
+					</div>
+				<td style="width: 281px; ">
+                    <div class="inputt" style="width: 229px;">@Html.EditorFor(Model=>Model.contrasena)</div>	
+                    	<br>
+				</td>
+			</tr>
+			
+		</table>
+		<br>
+		
+		<hr>
+			<h3>Información Personal</h3>
+		<hr>
+		
+		<table>
+			<tr>
+			<td style="width: 37px; height: 94px">
+				<td style="width: 140px; ">
+					<div class="milabel">
+						<label>* Nombre:	</label>
+					</div>
+			
+				<td style="width: 180px; ">
+                    <div class="inputt" style="width: 229px;">@Html.EditorFor(Model=>Model.nombre)</div>	
+                    	<br>
+				</td>
+				<td style="width: 10px; ">
+				</td>
+				<td>
+					<div class="milabel">
+						<label>Apellido Paterno:	</label>
+					</div>
+				</td>
+				<td>
+                    <div class="inputt" style="width: 229px;">@Html.EditorFor(Model=>Model.apellido_paterno)</div>	
+                    <br>
+				</td>
+			</tr>
+			<tr>
+			<td style="width: 74px; ">
+				<td><div class="milabel">
+						<label>*Apellido Materno:	</label>
+					</div>
+				<td>
+                    <div class="inputt" style="width: 229px;">@Html.EditorFor(Model=>Model.apellido_materno)</div>	
+                    <br>
+				</td>
+			</tr>
+			<tr>
+			<td style="width: 74px; ">
+				<td><div class="milabel">
+						<label>* DNI:	</label>
+					</div>
+				<td>
+                    <div class="inputt" style="width: 229px;">@Html.EditorFor(Model=>Model.dni)</div>	
+                    <br>
+				</td>
+			</tr>
+           
+			<tr>
+			<td style="width: 74px; ">
+				<td><div class="milabel">
+						<label>* Sexo:	</label>
+					</div>
+				<td>
+                    <div class="inputt" style="width: 229px;">@Html.DropDownListFor(Model=>Model.id_sexo, sexo, "(Seleccione sexo)")</div>	
+                    
+				</td>
+			</tr><br>
+            <tr>
+			<td style="width: 74px; ">
+				<td><div class="milabel">
+						<label>* Pais:	</label>
+					</div>
+				<td>
+                    <div class="inputt" style="width: 229px;">@Html.DropDownListFor(Model=>Model.id_pais, pais, "(Seleccione pais)")</div>	
+                    
+				</td>
+			</tr><br>
+			<tr>
+			<td style="width: 74px; ">
+				<td><div class="milabel">
+						<label>* Ciudad:	</label>
+					</div>
+				<td>
+                    <div class="inputt" style="width: 229px;">@Html.DropDownListFor(Model=>Model.id_ciudad, ciudad, "(Seleccione ciudad)")</div>	
+                     	<br>
+				</td>
+			</tr>
+			<tr>
+			<td style="width: 74px; ">
+				<td><div class="milabel">
+						<label>* Distrito:	</label>
+					</div>
+				<td>
+                    <div class="inputt" style="width: 229px;">@Html.DropDownListFor(Model=>Model.id_distrito, distrito, "(Seleccione distrito)")</div>	
+                     	<br>
+				</td>
+			</tr>
+			<tr>
+			<td style="width: 74px; ">
+				<td><div class="milabel">
+						<label>* Direccion:	</label>
+					</div>
+				<td>
+                    <div class="inputt" style="width: 229px;">@Html.EditorFor(Model=>Model.direccion)</div>	
+                     	<br>
+				</td>
+			</tr>
+			<tr>
+			<td style="width: 74px; ">
+				
+				
+				<td style="width: 108px; "><div class="milabel">
+						<label>* Refencia:	</label>
+					</div>
+				<td>
+                    <div class="inputt" style="width: 229px;">@Html.EditorFor(Model=>Model.referencia_direccion)</div>	
+                    	<br>
+				</td>
+			</tr>
+			
+			<tr>
+			<td style="width: 74px; ">
+				
+				<td><div class="milabel">
+						<label>* Telefono:	</label>
+					</div>
+				<td>
+                    <div class="inputt" style="width: 229px;">@Html.EditorFor(Model=>Model.telefono)</div>	
+                    	<br>
+				</td>
+			</tr>
+		
+		<tr>
+				<td>
+				<td>
+				
+				</td>
+					
+				</td>
+				<td>
+                    <div><input type="submit" value="Crear" class="button"/></div>
+                      
+				</td> 
+				<td>
+					 	<a href="../Login/Login" class="button">CANCELAR</a>
+				</td>	
+		</tr>
+		
+		
+	</table>
+	<br><marquee>TODOS LOS DERECHOS RESERVADOS 2013</marquee>
+        <div class="clear"></div>
+    </div>
+</header>
+            }
+    
+<!-- Footer -->
+<footer>
+    <div class="copyright">
+        &copy; 2014 <strong class="footer-logo"></strong>
+        <div><a rel="nofollow" href="Index">Sitio Web Oficial </a> de MyPet.com</div>
+		<div>Todos los Derechos Reservados.</div>
+    </div>
+    <ul class="social-list">
+    	<li><a href="#"><img src="/Content/images/social-link-1.jpg" alt=""></a></li>
+        <li><a href="#"><img src="/Content/images/social-link-2.jpg" alt=""></a></li>
+        <li><a href="#"><img src="/Content/images/social-link-3.jpg" alt=""></a></li>
+    </ul>
+</footer>	
+
+	<!-- 
+	<a href="<s:url action="buscarCliente1"/>"><s:text name ="pagina.busq.title"/></a>
+	
+	<br />
+	
+	<s:url id="idiomaEn" action="idioma">
+		<s:param name="request_locale">en</s:param>
+	</s:url>
+	<s:url id="idiomaEs" action="idioma">
+		<s:param name="request_locale">es</s:param>
+	</s:url>
+	
+	<table>
+		<tr>
+			<td>
+				<s:a href="%{idiomaEn}">
+					<s:text name="idioma.ingles"/>
+				</s:a>
+				<s:a href="%{idiomaEs}">
+					<s:text name="idioma.espanol"/>
+				</s:a>
+			</td>
+		</tr>
+	</table>-->
+		
+</body>

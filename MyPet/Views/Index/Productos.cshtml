@@ -1,0 +1,199 @@
+﻿@model IEnumerable<MyPet.Models.Ciudad>
+@{
+    ViewBag.Title = "Productos";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Inicio </title>
+	<meta charset="utf-8">
+    <meta name="description" content="Your description">
+    <meta name="keywords" content="Your keywords">
+    <meta name="author" content="Your name">
+    <link rel="stylesheet" href="/Content/css/style.css">
+    <script src="/Content/js/jquery-1.7.1.min.js"></script>
+    <script src="/Content/js/superfish.js"></script>
+    <script src="/Content/js/jquery.easing.1.3.js"></script>
+    <script src="/Content/js/tms-0.4.1.js"></script>
+    <script src="/Content/js/slider.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            function equalHeight(group) {
+                var tallest = 0;
+                group.each(function () {
+                    var thisHeight = $(this).height();
+                    if (thisHeight > tallest) {
+                        tallest = thisHeight;
+                    }
+                });
+                group.height(tallest);
+            }
+            equalHeight($(".box-1 .inner"));
+        })
+	</script>
+	<!-- jQuery library (served from Google) -->
+	
+	<!-- bxSlider Javascript file -->
+	<script src="/Content/js/jquery.bxslider.min.js"></script>
+	<!-- bxSlider CSS file -->
+	<link href="/Content/js/jquery.bxslider.css" rel="stylesheet" />
+</head>
+<body background="green">
+	<!-- Header -->
+<header>
+    <div class="inner">
+        <h1 class="logo">
+        <a href="../Index/Inicio">Pet clinic</a></h1>
+        <div class="fright">
+            <div class="header-meta">
+               <form id="search-form" method="post">
+                    <input type="text" onblur="if(this.value==''){this.value='search'}" onfocus="if(this.value=='search'){this.value=''}" value="search" name="search">
+                    <a class="search-form-submit" onclick="document.getElementById('search-form').submit()"></a>
+                </form>		
+                <div class="col-elem">
+                    ¿Problemas con su mascota?<br>
+                    Llámenos ahora: 
+                    <span class="phone">
+                        993-777-123
+                    </span>
+                </div>
+            </div>
+            <nav>
+                <ul class="sf-menu sf-js-enabled">
+                    <li class="current">
+                        <a href="../Index/Inicio">inicio</a>
+                    </li>
+                    <li><a href="../Index/Nosotros">nosotros</a></li>
+                    <li>
+                        <a href="Servicios">servicios</a>
+                    </li>
+                    <li><a href="../Index/Inicio">productos</a></li>
+                    <li><a href="../Index/Inicio">reportes</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="clear"></div>
+    </div>
+</header>
+<!-- Content -->
+<section id="content"><div class="ic"></div>
+    
+       <table >
+           <tr>
+               <td>CODIGO  .</td>
+               <td>NOMBRE  .</td>
+           </tr>
+       @foreach (var fila in Model)
+       {
+           <tr>
+               <td>@fila.id_ciudad</td>
+               <td>@fila.descrip_ciudad</td>
+           </tr>
+       }
+       </table>  
+    
+    <hr/>
+
+    <div class="container_24">
+        <div class="indent-bot-1">
+            <div class="grid_6">
+                <div class="inner-indent">
+                    <h2>Novedades:</h2>
+                    <ul class="list-1">
+                        <li><a href="#">Identificacion y collar</a></li> 
+                        <li><a href="#">Correas - Arnés</a></li>  
+                        <li><a href="#">Natacion - Ejercicios</a></li>
+                        <li><a href="#">Casas - Camas</a></li>
+                        <li><a href="#">Higiene y Acicalamiento</a></li> 
+                        <li><a href="#">Escuelas Caninas</a></li> 
+                        <li><a href="#">Adiestramiento</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="grid_6 suffix_1">
+                <div class="box-2">
+                    <h2>Innovación:</h2>
+                    <p class="p1">
+                        <strong class="str-2">
+                            El nuevo sistema de nombre FIDO (facilitating interactions for dogs with occupations)
+                        </strong>
+                    </p>
+                    <p class="p1">
+                        Se trata de un conjuntos de tecnologías y dispositivos encaminados a facilitar la interacción de los perros 'asistentes'.
+                    </p>
+                    <div class="alignright">
+                        <a href="#" class="link">Leer más</a>
+                    </div>
+                </div>
+            </div>
+            <div class="grid_11 indent-top">
+                <h2><span>Bienvenido</span> a nuestra clinica!</h2>
+                <div class="wrapper">
+                    <figure class="img-indent">
+                        <img src="/Content/images/page1-img1.png" alt="" class="img-indent-bot">
+                        <div class="author">
+                            <em>Pedro Venturo</em>
+                            (doctor)
+                        </div>
+                    </figure>
+                     <blockquote class="quote extra-wrap">
+                        <strong>
+                            My Pet es una clinica de prestigio que ofrece la atencion que usted necesita.
+                        </strong><br>
+                         Miembro del Colegio Médico Veterinario del Perú con colegiatura número 890.<br>
+                         Egresado de la Universidad Nacional Mayor de San Marcos.<br>
+                         Especialista en Animales Menores de la Universidad Peruana Cayetano Heredia.<br>
+                         Diplomado en Docencia Universitaria.<br>
+                         Diplomado en Medicina de Animales Menores de la Universidad Autonoma de Mexico.<br>
+                         Ex Decano Nacional del Colegio Médico Veterinario del Perú.<br>
+                         Ex Presidente de la Asociación de Médicos Especialista en Animales Menores del Perú...
+                     </blockquote>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+</section>
+<!-- Footer -->
+<footer>
+    <div class="copyright">
+        &copy; 2014 <strong class="footer-logo"></strong>
+        <div><a rel="nofollow" href="Index">Sitio Web Oficial </a> de MyPet.com</div>
+		<div>Todos los Derechos Reservados.</div>
+    </div>
+    <ul class="social-list">
+    	<li><a href="#"><img src="/Content/images/social-link-1.jpg" alt=""></a></li>
+        <li><a href="#"><img src="/Content/images/social-link-2.jpg" alt=""></a></li>
+        <li><a href="#"><img src="/Content/images/social-link-3.jpg" alt=""></a></li>
+    </ul>
+</footer>	
+
+	<!-- 
+	<a href="<s:url action="buscarCliente1"/>"><s:text name ="pagina.busq.title"/></a>
+	
+	<br />
+	
+	<s:url id="idiomaEn" action="idioma">
+		<s:param name="request_locale">en</s:param>
+	</s:url>
+	<s:url id="idiomaEs" action="idioma">
+		<s:param name="request_locale">es</s:param>
+	</s:url>
+	
+	<table>
+		<tr>
+			<td>
+				<s:a href="%{idiomaEn}">
+					<s:text name="idioma.ingles"/>
+				</s:a>
+				<s:a href="%{idiomaEs}">
+					<s:text name="idioma.espanol"/>
+				</s:a>
+			</td>
+		</tr>
+	</table>-->
+		
+</body>
+
+</html>

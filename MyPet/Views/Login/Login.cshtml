@@ -1,0 +1,24 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+}
+
+<link rel="stylesheet" type="text/css" href="/Content/css/style.css"/>
+
+<body>
+
+ <div id="contenedor">
+ 	<h1 class="logo">
+        <a href="../Login/Login">Pet clinic</a></h1>
+	<!--<form name="formu" method="post" action="">-->
+	<input type="hidden" name="operacion" value="logueo">
+	
+		<input type = "text" name="correo" value="" class="inputt" maxlength="40">
+		<input type = "password" name="contraseña" value="" class="inputt" maxlength="5"><br>
+		<a href="../Index/Inicio" class="button">Enviar</a>
+		<!-- <input type = "submit" name="login" value="Enviar" class="boton" onclick="validarDatos()" href="index.jsp">--> <a href="../Cliente/RegistroCliente" class="button">Registrarse</a>
+	
+	
+	</form>
+ </div>
+</body>

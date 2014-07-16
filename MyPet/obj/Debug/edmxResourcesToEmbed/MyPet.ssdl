@@ -1,0 +1,222 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="mypetModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="mypetModelStoreContainer">
+    <EntitySet Name="ciudad" EntityType="mypetModel.Store.ciudad" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="cliente" EntityType="mypetModel.Store.cliente" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="distrito" EntityType="mypetModel.Store.distrito" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="mascota" EntityType="mypetModel.Store.mascota" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="pais" EntityType="mypetModel.Store.pais" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="raza" EntityType="mypetModel.Store.raza" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="sexo" EntityType="mypetModel.Store.sexo" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tamaño" EntityType="mypetModel.Store.tamaño" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tipo_usuario" EntityType="mypetModel.Store.tipo_usuario" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK__cliente__id_ciud__1BFD2C07" Association="mypetModel.Store.FK__cliente__id_ciud__1BFD2C07">
+      <End Role="ciudad" EntitySet="ciudad" />
+      <End Role="cliente" EntitySet="cliente" />
+    </AssociationSet>
+    <AssociationSet Name="FK__cliente__id_dist__1CF15040" Association="mypetModel.Store.FK__cliente__id_dist__1CF15040">
+      <End Role="distrito" EntitySet="distrito" />
+      <End Role="cliente" EntitySet="cliente" />
+    </AssociationSet>
+    <AssociationSet Name="FK__cliente__id_pais__1B0907CE" Association="mypetModel.Store.FK__cliente__id_pais__1B0907CE">
+      <End Role="pais" EntitySet="pais" />
+      <End Role="cliente" EntitySet="cliente" />
+    </AssociationSet>
+    <AssociationSet Name="FK__cliente__id_sexo__1A14E395" Association="mypetModel.Store.FK__cliente__id_sexo__1A14E395">
+      <End Role="sexo" EntitySet="sexo" />
+      <End Role="cliente" EntitySet="cliente" />
+    </AssociationSet>
+    <AssociationSet Name="FK__cliente__tipo_us__1DE57479" Association="mypetModel.Store.FK__cliente__tipo_us__1DE57479">
+      <End Role="tipo_usuario" EntitySet="tipo_usuario" />
+      <End Role="cliente" EntitySet="cliente" />
+    </AssociationSet>
+    <AssociationSet Name="FK__mascota__id_clie__267ABA7A" Association="mypetModel.Store.FK__mascota__id_clie__267ABA7A">
+      <End Role="cliente" EntitySet="cliente" />
+      <End Role="mascota" EntitySet="mascota" />
+    </AssociationSet>
+    <AssociationSet Name="FK__mascota__id_raza__24927208" Association="mypetModel.Store.FK__mascota__id_raza__24927208">
+      <End Role="raza" EntitySet="raza" />
+      <End Role="mascota" EntitySet="mascota" />
+    </AssociationSet>
+    <AssociationSet Name="FK__mascota__id_tama__25869641" Association="mypetModel.Store.FK__mascota__id_tama__25869641">
+      <End Role="tamaño" EntitySet="tamaño" />
+      <End Role="mascota" EntitySet="mascota" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="ciudad">
+    <Key>
+      <PropertyRef Name="id_ciudad" />
+    </Key>
+    <Property Name="id_ciudad" Type="char" Nullable="false" MaxLength="5" />
+    <Property Name="descripcion_ciu" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="cliente">
+    <Key>
+      <PropertyRef Name="id_cliente" />
+    </Key>
+    <Property Name="id_cliente" Type="char" Nullable="false" MaxLength="5" />
+    <Property Name="email" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="contrasena" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="nombre" Type="varchar" MaxLength="50" />
+    <Property Name="apellidoPat" Type="varchar" MaxLength="50" />
+    <Property Name="apellidoMat" Type="varchar" MaxLength="50" />
+    <Property Name="dni" Type="varchar" MaxLength="50" />
+    <Property Name="id_sexo" Type="char" Nullable="false" MaxLength="5" />
+    <Property Name="id_pais" Type="char" Nullable="false" MaxLength="5" />
+    <Property Name="id_ciudad" Type="char" Nullable="false" MaxLength="5" />
+    <Property Name="id_distrito" Type="char" Nullable="false" MaxLength="5" />
+    <Property Name="direccion" Type="varchar" MaxLength="50" />
+    <Property Name="referencia_direccion" Type="varchar" MaxLength="50" />
+    <Property Name="telefono" Type="varchar" MaxLength="50" />
+    <Property Name="tipo_usuario" Type="char" Nullable="false" MaxLength="5" />
+  </EntityType>
+  <EntityType Name="distrito">
+    <Key>
+      <PropertyRef Name="id_distrito" />
+    </Key>
+    <Property Name="id_distrito" Type="char" Nullable="false" MaxLength="5" />
+    <Property Name="descripcion_dist" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="mascota">
+    <Key>
+      <PropertyRef Name="id_mascota" />
+    </Key>
+    <Property Name="id_mascota" Type="char" Nullable="false" MaxLength="5" />
+    <Property Name="nombre_mascota" Type="varchar" MaxLength="50" />
+    <Property Name="fecha_nac" Type="varchar" MaxLength="50" />
+    <Property Name="id_raza" Type="char" Nullable="false" MaxLength="5" />
+    <Property Name="id_tamaño" Type="char" Nullable="false" MaxLength="5" />
+    <Property Name="id_cliente" Type="char" Nullable="false" MaxLength="5" />
+  </EntityType>
+  <EntityType Name="pais">
+    <Key>
+      <PropertyRef Name="id_pais" />
+    </Key>
+    <Property Name="id_pais" Type="char" Nullable="false" MaxLength="5" />
+    <Property Name="descrip_pais" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="raza">
+    <Key>
+      <PropertyRef Name="id_raza" />
+    </Key>
+    <Property Name="id_raza" Type="char" Nullable="false" MaxLength="5" />
+    <Property Name="descripcion_raza" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="sexo">
+    <Key>
+      <PropertyRef Name="id_sexo" />
+    </Key>
+    <Property Name="id_sexo" Type="char" Nullable="false" MaxLength="5" />
+    <Property Name="descrip_sexo" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tamaño">
+    <Key>
+      <PropertyRef Name="id_tamaño" />
+    </Key>
+    <Property Name="id_tamaño" Type="char" Nullable="false" MaxLength="5" />
+    <Property Name="descripcion_tamaño" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tipo_usuario">
+    <Key>
+      <PropertyRef Name="tipo_usuario" />
+    </Key>
+    <Property Name="tipo_usuario" Type="char" Nullable="false" MaxLength="5" />
+    <Property Name="descrip_usuario" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK__cliente__id_ciud__1BFD2C07">
+    <End Role="ciudad" Type="mypetModel.Store.ciudad" Multiplicity="1" />
+    <End Role="cliente" Type="mypetModel.Store.cliente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ciudad">
+        <PropertyRef Name="id_ciudad" />
+      </Principal>
+      <Dependent Role="cliente">
+        <PropertyRef Name="id_ciudad" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__cliente__id_dist__1CF15040">
+    <End Role="distrito" Type="mypetModel.Store.distrito" Multiplicity="1" />
+    <End Role="cliente" Type="mypetModel.Store.cliente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="distrito">
+        <PropertyRef Name="id_distrito" />
+      </Principal>
+      <Dependent Role="cliente">
+        <PropertyRef Name="id_distrito" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__cliente__id_pais__1B0907CE">
+    <End Role="pais" Type="mypetModel.Store.pais" Multiplicity="1" />
+    <End Role="cliente" Type="mypetModel.Store.cliente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="pais">
+        <PropertyRef Name="id_pais" />
+      </Principal>
+      <Dependent Role="cliente">
+        <PropertyRef Name="id_pais" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__cliente__id_sexo__1A14E395">
+    <End Role="sexo" Type="mypetModel.Store.sexo" Multiplicity="1" />
+    <End Role="cliente" Type="mypetModel.Store.cliente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="sexo">
+        <PropertyRef Name="id_sexo" />
+      </Principal>
+      <Dependent Role="cliente">
+        <PropertyRef Name="id_sexo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__cliente__tipo_us__1DE57479">
+    <End Role="tipo_usuario" Type="mypetModel.Store.tipo_usuario" Multiplicity="1" />
+    <End Role="cliente" Type="mypetModel.Store.cliente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tipo_usuario">
+        <PropertyRef Name="tipo_usuario" />
+      </Principal>
+      <Dependent Role="cliente">
+        <PropertyRef Name="tipo_usuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__mascota__id_clie__267ABA7A">
+    <End Role="cliente" Type="mypetModel.Store.cliente" Multiplicity="1" />
+    <End Role="mascota" Type="mypetModel.Store.mascota" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="cliente">
+        <PropertyRef Name="id_cliente" />
+      </Principal>
+      <Dependent Role="mascota">
+        <PropertyRef Name="id_cliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__mascota__id_raza__24927208">
+    <End Role="raza" Type="mypetModel.Store.raza" Multiplicity="1" />
+    <End Role="mascota" Type="mypetModel.Store.mascota" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="raza">
+        <PropertyRef Name="id_raza" />
+      </Principal>
+      <Dependent Role="mascota">
+        <PropertyRef Name="id_raza" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__mascota__id_tama__25869641">
+    <End Role="tamaño" Type="mypetModel.Store.tamaño" Multiplicity="1" />
+    <End Role="mascota" Type="mypetModel.Store.mascota" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tamaño">
+        <PropertyRef Name="id_tamaño" />
+      </Principal>
+      <Dependent Role="mascota">
+        <PropertyRef Name="id_tamaño" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

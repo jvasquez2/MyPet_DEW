@@ -1,0 +1,300 @@
+﻿@{
+    ViewBag.Title = "Nosotros";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  	<title>Nosotros</title>
+  	<meta charset="utf-8">
+    <meta name="description" content="Your description">
+    <meta name="keywords" content="Your keywords">
+    <meta name="author" content="Your name">
+    <link rel="stylesheet" href="/Content/css/style.css">
+    <script src="/Content/js/jquery-1.7.1.min.js"></script>
+    <script src="/Content/js/superfish.js"></script>
+    <script type="text/javascript">
+		$(function(){
+			function equalHeight(group) {
+				var tallest = 0;
+				group.each(function() {
+					var thisHeight = $(this).height();
+					if(thisHeight > tallest) {
+						tallest = thisHeight;
+					}
+				});
+				group.height(tallest);
+			}	
+			equalHeight($(".box-1 .inner"));
+		})
+	</script>
+<!--[if lt IE 8]>
+   <div style=' clear: both; text-align:center; position: relative;'>
+     <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+       <img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." />
+    </a>
+  </div>
+<![endif]-->
+<!--[if lt IE 9]>
+	<script src="js/html5.js"></script>
+	<link rel="stylesheet" href="css/ie.css"> 
+<![endif]-->
+</head>
+<body>
+<!-- Header -->
+<header>
+    <div class="inner">
+        <h1 class="logo">
+        <a href="../Index/Inicio">Pet clinic</a></h1>
+        <div class="fright">
+            <div class="header-meta">
+                <form id="search-form" method="post">
+                    <input type="text" onblur="if(this.value==''){this.value='search'}" onfocus="if(this.value=='search'){this.value=''}" value="search" name="search">
+                    <a class="search-form-submit" onclick="document.getElementById('search-form').submit()"></a>
+                </form>
+                <div class="col-elem">
+                    ¿Problemas con su mascota?<br>
+                    Llámenos ahora: 
+                    <span class="phone">
+                        993-777-123
+                    </span>
+                </div>
+            </div>
+            <nav>
+                <ul class="sf-menu sf-js-enabled">
+                    <li class="current">
+                        <a href="../Index/Inicio">inicio</a>
+                    </li>
+                    <li><a href="Nosotros">nosotros</a></li>
+                    <li>
+                        <a href="Servicios">servicios</a>
+                    </li>
+                    <li><a href="../Index/Inicio">productos</a></li>
+                    <li><a href="../Index/Inicio">reportes</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="clear"></div>
+    </div>
+</header>
+<!-- Content -->
+<section id="content"><div class="ic"></div>
+    <div class="container_24">
+        <div class="indent-bot-2 boxes-bg">
+            <article class="grid_6">
+                <div class="box-1">
+                    <div class="inner">
+                        <h3>Implante de Microchip</h3>
+                        <p>                            
+                            Alternativa sana y económica. Ayuda a identificar a perros o gatos y poder 
+                            contactar de forma más rápida y eficaz al verdadero dueño.</p>
+                        <div class="btn-container">
+                            <div class="button-box">
+                                <a href="#" class="button">Leer más</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="grid_6">
+                <div class="box-1">
+                    <div class="inner">
+                        <h3>Ultrasonido</h3>
+                        <p class="p0">
+                            <strong class="str-1">
+                                Ponga fin a los molestos ladridos de su can.
+                            </strong>
+                        </p>
+                        <p>
+                            Este dispositivo entrena al perro para que deje de ladrar mediante la emisión de sonidos 
+                            ultrasónicos como respuesta directa a cada ladrido. 
+                        </p>
+                        <div class="btn-container">
+                            <div class="button-box">
+                                <a href="#" class="button">Leer más</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="grid_6">
+                <div class="box-1">
+                    <div class="inner">
+                        <h3>Servicio de Transporte</h3>
+                        <p>
+                        	 Contamos con un Servicio de Transporte para su comodidad, tanto para su mascota como para los productos que
+                            usted requiera.  
+                        </p>
+                        <div class="btn-container">
+                            <div class="button-box">
+                                <a href="#" class="button">Leer más</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="grid_6">
+                <div class="box-1">
+                    <div class="inner">
+                        <h3>Vacunas</h3>
+                        <p class="p0">
+                            <strong class="str-1">
+                                ¡Cuidado! Tu mascota debe recibir todas las vacunas. 
+                            </strong>
+                        </p>
+                        <p>
+                            Ahora te vamos a explicar qué vacunas tienes que ponerle y cuando, y que riesgos corre en caso de no hacerlo.
+                            <br /><br />
+                        </p>
+                        <div class="btn-container">
+                            <div class="button-box">
+                                <a href="#" class="button">Leer más</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <div class="clear"></div>
+        </div>
+        <div class="wrapper indent-bot-1">
+            <article class="grid_7 suffix_1">
+            	<h2>Sobre la clinica:</h2>
+                <p class="p1">
+                	<strong class="str-3">
+                    	La Clínica cuenta con médicos especialistas en animales menores, cirujanos especializados. 
+                    </strong>
+                </p>
+                <p>
+                	Las instalaciones de la clínica han sido recientemente remodeladas por completo ya que tuvo que ampliarse porque el local estaba quedando pequeño para la gran acogida que tiene y el gran número de pacientes que atiende diariamente. Cuenta con un laboratorio propio donde se realiza rayos X y ecografías. 
+                </p>
+                <div class="alignright">
+                    <a href="#" class="link">Leer más</a>
+                </div>
+            </article>
+            <article class="grid_16">
+            	<h2>Nuestros especialistas:</h2>
+                <div class="wrapper">
+                	<div class="grid_4 alpha">
+                    	<img src="/Content/images/page2-img1.png" alt="" class="img-indent-bot">
+                        <div class="author">
+                        	<em>
+                            	Richard Villavicenzio
+                            </em>
+                            (doctor)
+                        </div>
+                    </div>
+                    <div class="grid_4">
+                    	<img src="/Content/images/page2-img2.png" alt="" class="img-indent-bot">
+                        <div class="author">
+                        	<em>
+                            	Linda Mendez
+                            </em>
+                            (enfermera)
+                        </div>
+                    </div>
+                    <div class="grid_4">
+                    	<img src="/Content/images/page2-img3.png" alt="" class="img-indent-bot">
+                        <div class="author">
+                        	<em>
+                            	Sara Gallardo
+                            </em>
+                            (diagnosticadora)
+                        </div>
+                    </div>
+                    <div class="grid_4 omega">
+                    	<img src="/Content/images/page2-img4.png" alt="" class="img-indent-bot">
+                        <div class="author">
+                        	<em>
+                            	Pedro Venturo
+                            </em>
+                            (doctor)
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+        <div class="hr-border"></div>
+        <div class="a1">
+        	<h2>Testimonios:</h2>
+            <div>
+            	<div class="grid_6 alpha">
+                	<blockquote class="quote-1">
+                    	<div class="quote-1-inner">
+                    		<span class="str-1">
+                    		Mi perra Osa fue vacunada para que no tenga crias, a causa de eso empezo a sufrir 
+                    		sintomas como: ojos legañosos, se le cierra la vista como si ..
+                    		</span>
+                        </div>
+                    </blockquote>
+                    <div class="author alignright indents-1">
+                    	<em>
+                        	Richard Cox
+                        </em>
+                        (ingeniero)
+                    </div>
+                </div>
+                <div class="grid_6">
+                	<blockquote class="quote-1">
+                    	<div class="quote-1-inner">
+                    		<strong>Hace 10 semanas tengo a mi gatito Cook.</strong><br>
+                        	No tiene la salud necesaria y tampoco cuento con mucho tiempo para sacarlo
+                        	a pasear y el compromiso de atenderlo bien y un buen espacio..
+                        </div>
+                    </blockquote>
+                    <div class="author alignright indents-1">
+                    	<em>
+                        	Marie Jean
+                        </em>
+                        (ama de casa)
+                    </div>
+                </div>
+                <div class="grid_6">
+                	<blockquote class="quote-1">
+                    	<div class="quote-1-inner">
+                    		<strong>Quisiera adoptar un cachorrito.</strong><br>
+                       		Soy amante de los caninos y quiero adoptar un cachorrito o si 
+                       		no uno en venta quiero que no sean tan excesivos con propuestas.
+                        </div>
+                    </blockquote>
+                    <div class="author alignright indents-1">
+                    	<em>
+                        	Alan Madrid
+                        </em>
+                        (abogado)
+                    </div>
+                </div>
+                <div class="grid_6 omega">
+                	<blockquote class="quote-1">
+                    	<div class="quote-1-inner">
+                    		<strong>Estoy muy agradecida con los medicos veterianarios</strong><br>
+                            por haber ayudado con las consultas de mi can, ahora vivo en
+                            España y llame para que me sigan apoyando con los cuidados de mi can.
+                        </div>
+                    </blockquote>
+                    <div class="author alignright indents-1">
+                    	<em>
+                        	Sergio Valdizan
+                        </em>
+                        (arquitecto)
+                    </div>
+                </div>
+        		<div class="clear"></div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Footer -->
+<footer>
+    <div class="copyright">
+        &copy; 2014 <strong class="footer-logo"></strong>
+        <div><a rel="nofollow" href="Index">Sitio Web Oficial </a> de MyPet.com</div>
+		<div>Todos los Derechos Reservados.</div>
+    </div>
+    <ul class="social-list">
+    	<li><a href="#"><img src="/Content/images/social-link-1.jpg" alt=""></a></li>
+        <li><a href="#"><img src="/Content/images/social-link-2.jpg" alt=""></a></li>
+        <li><a href="#"><img src="/Content/images/social-link-3.jpg" alt=""></a></li>
+    </ul>
+</footer>		
+</body>
+</html>
