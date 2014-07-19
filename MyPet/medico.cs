@@ -12,30 +12,22 @@ namespace MyPet
     using System;
     using System.Collections.Generic;
     
-    public partial class cliente
+    public partial class medico
     {
-        public cliente()
+        public medico()
         {
-            this.boleta = new HashSet<boleta>();
             this.cita = new HashSet<cita>();
-            this.mascota = new HashSet<mascota>();
         }
     
-        public string DNI { get; set; }
+        public string CODIGO { get; set; }
         public string NOMBRE { get; set; }
         public string APELLIDO_PATERNO { get; set; }
         public string APELLIDO_MATERNO { get; set; }
-        public string DIRECCION { get; set; }
-        public string CODIGO_POSTAL { get; set; }
-        public Nullable<int> ID_SEXO { get; set; }
-        public string EMAIL { get; set; }
-        public string TELEFONO { get; set; }
+        public Nullable<int> ID_ESPECIALIDAD { get; set; }
+        public Nullable<System.DateTime> FECHA_NACIMIENTO { get; set; }
     
-        public virtual ICollection<boleta> boleta { get; set; }
         public virtual ICollection<cita> cita { get; set; }
-        public virtual tabla_postal tabla_postal { get; set; }
+        public virtual especialidad especialidad { get; set; }
         public virtual usuario usuario { get; set; }
-        public virtual sexo sexo { get; set; }
-        public virtual ICollection<mascota> mascota { get; set; }
     }
 }

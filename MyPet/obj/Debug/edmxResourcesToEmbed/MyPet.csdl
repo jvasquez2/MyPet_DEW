@@ -1,237 +1,521 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="mypetModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
   <EntityContainer Name="mypetEntities" p1:LazyLoadingEnabled="true">
-    <EntitySet Name="ciudad" EntityType="mypetModel.ciudad" />
+    <EntitySet Name="boleta" EntityType="mypetModel.boleta" />
+    <EntitySet Name="cita" EntityType="mypetModel.cita" />
     <EntitySet Name="cliente" EntityType="mypetModel.cliente" />
-    <EntitySet Name="distrito" EntityType="mypetModel.distrito" />
+    <EntitySet Name="detalle_boleta" EntityType="mypetModel.detalle_boleta" />
+    <EntitySet Name="especialidad" EntityType="mypetModel.especialidad" />
+    <EntitySet Name="especie" EntityType="mypetModel.especie" />
+    <EntitySet Name="estado" EntityType="mypetModel.estado" />
+    <EntitySet Name="historia_clinica" EntityType="mypetModel.historia_clinica" />
     <EntitySet Name="mascota" EntityType="mypetModel.mascota" />
-    <EntitySet Name="pais" EntityType="mypetModel.pais" />
+    <EntitySet Name="medico" EntityType="mypetModel.medico" />
+    <EntitySet Name="producto" EntityType="mypetModel.producto" />
     <EntitySet Name="raza" EntityType="mypetModel.raza" />
     <EntitySet Name="sexo" EntityType="mypetModel.sexo" />
-    <EntitySet Name="tamaño" EntityType="mypetModel.tamaño" />
+    <EntitySet Name="tabla_postal" EntityType="mypetModel.tabla_postal" />
     <EntitySet Name="tipo_usuario" EntityType="mypetModel.tipo_usuario" />
-    <AssociationSet Name="FK__cliente__id_ciud__1BFD2C07" Association="mypetModel.FK__cliente__id_ciud__1BFD2C07">
-      <End Role="ciudad" EntitySet="ciudad" />
+    <EntitySet Name="usuario" EntityType="mypetModel.usuario" />
+    <EntitySet Name="variables" EntityType="mypetModel.variables" />
+    <AssociationSet Name="FK__boleta__DNI__2C3393D0" Association="mypetModel.FK__boleta__DNI__2C3393D0">
+      <End Role="cliente" EntitySet="cliente" />
+      <End Role="boleta" EntitySet="boleta" />
+    </AssociationSet>
+    <AssociationSet Name="FK__detalle_b__NUMER__2F10007B" Association="mypetModel.FK__detalle_b__NUMER__2F10007B">
+      <End Role="boleta" EntitySet="boleta" />
+      <End Role="detalle_boleta" EntitySet="detalle_boleta" />
+    </AssociationSet>
+    <AssociationSet Name="FK__cita__3E52440B" Association="mypetModel.FK__cita__3E52440B">
+      <End Role="mascota" EntitySet="mascota" />
+      <End Role="cita" EntitySet="cita" />
+    </AssociationSet>
+    <AssociationSet Name="FK__cita__CODIGO_MED__3D5E1FD2" Association="mypetModel.FK__cita__CODIGO_MED__3D5E1FD2">
+      <End Role="medico" EntitySet="medico" />
+      <End Role="cita" EntitySet="cita" />
+    </AssociationSet>
+    <AssociationSet Name="FK__cita__DNI_CLIENT__3F466844" Association="mypetModel.FK__cita__DNI_CLIENT__3F466844">
+      <End Role="cliente" EntitySet="cliente" />
+      <End Role="cita" EntitySet="cita" />
+    </AssociationSet>
+    <AssociationSet Name="FK__cliente__CODIGO___1BFD2C07" Association="mypetModel.FK__cliente__CODIGO___1BFD2C07">
+      <End Role="tabla_postal" EntitySet="tabla_postal" />
       <End Role="cliente" EntitySet="cliente" />
     </AssociationSet>
-    <AssociationSet Name="FK__cliente__id_dist__1CF15040" Association="mypetModel.FK__cliente__id_dist__1CF15040">
-      <End Role="distrito" EntitySet="distrito" />
+    <AssociationSet Name="FK__cliente__DNI__1DE57479" Association="mypetModel.FK__cliente__DNI__1DE57479">
+      <End Role="usuario" EntitySet="usuario" />
       <End Role="cliente" EntitySet="cliente" />
     </AssociationSet>
-    <AssociationSet Name="FK__cliente__id_pais__1B0907CE" Association="mypetModel.FK__cliente__id_pais__1B0907CE">
-      <End Role="pais" EntitySet="pais" />
-      <End Role="cliente" EntitySet="cliente" />
-    </AssociationSet>
-    <AssociationSet Name="FK__cliente__id_sexo__1A14E395" Association="mypetModel.FK__cliente__id_sexo__1A14E395">
+    <AssociationSet Name="FK__cliente__ID_SEXO__1CF15040" Association="mypetModel.FK__cliente__ID_SEXO__1CF15040">
       <End Role="sexo" EntitySet="sexo" />
       <End Role="cliente" EntitySet="cliente" />
     </AssociationSet>
-    <AssociationSet Name="FK__cliente__tipo_us__1DE57479" Association="mypetModel.FK__cliente__tipo_us__1DE57479">
-      <End Role="tipo_usuario" EntitySet="tipo_usuario" />
-      <End Role="cliente" EntitySet="cliente" />
-    </AssociationSet>
-    <AssociationSet Name="FK__mascota__id_clie__267ABA7A" Association="mypetModel.FK__mascota__id_clie__267ABA7A">
+    <AssociationSet Name="FK__mascota__DNI__276EDEB3" Association="mypetModel.FK__mascota__DNI__276EDEB3">
       <End Role="cliente" EntitySet="cliente" />
       <End Role="mascota" EntitySet="mascota" />
     </AssociationSet>
-    <AssociationSet Name="FK__mascota__id_raza__24927208" Association="mypetModel.FK__mascota__id_raza__24927208">
+    <AssociationSet Name="FK__detalle_b__CODIG__300424B4" Association="mypetModel.FK__detalle_b__CODIG__300424B4">
+      <End Role="producto" EntitySet="producto" />
+      <End Role="detalle_boleta" EntitySet="detalle_boleta" />
+    </AssociationSet>
+    <AssociationSet Name="FK__medico__ID_ESPEC__34C8D9D1" Association="mypetModel.FK__medico__ID_ESPEC__34C8D9D1">
+      <End Role="especialidad" EntitySet="especialidad" />
+      <End Role="medico" EntitySet="medico" />
+    </AssociationSet>
+    <AssociationSet Name="FK__mascota__ID_ESPE__25869641" Association="mypetModel.FK__mascota__ID_ESPE__25869641">
+      <End Role="especie" EntitySet="especie" />
+      <End Role="mascota" EntitySet="mascota" />
+    </AssociationSet>
+    <AssociationSet Name="FK__raza__ID_ESPECIE__22AA2996" Association="mypetModel.FK__raza__ID_ESPECIE__22AA2996">
+      <End Role="especie" EntitySet="especie" />
+      <End Role="raza" EntitySet="raza" />
+    </AssociationSet>
+    <AssociationSet Name="FK__usuario__ESTADO__182C9B23" Association="mypetModel.FK__usuario__ESTADO__182C9B23">
+      <End Role="estado" EntitySet="estado" />
+      <End Role="usuario" EntitySet="usuario" />
+    </AssociationSet>
+    <AssociationSet Name="FK__historia_clinica__3A81B327" Association="mypetModel.FK__historia_clinica__3A81B327">
+      <End Role="mascota" EntitySet="mascota" />
+      <End Role="historia_clinica" EntitySet="historia_clinica" />
+    </AssociationSet>
+    <AssociationSet Name="FK__mascota__267ABA7A" Association="mypetModel.FK__mascota__267ABA7A">
       <End Role="raza" EntitySet="raza" />
       <End Role="mascota" EntitySet="mascota" />
     </AssociationSet>
-    <AssociationSet Name="FK__mascota__id_tama__25869641" Association="mypetModel.FK__mascota__id_tama__25869641">
-      <End Role="tamaño" EntitySet="tamaño" />
-      <End Role="mascota" EntitySet="mascota" />
+    <AssociationSet Name="FK__medico__CODIGO__35BCFE0A" Association="mypetModel.FK__medico__CODIGO__35BCFE0A">
+      <End Role="usuario" EntitySet="usuario" />
+      <End Role="medico" EntitySet="medico" />
+    </AssociationSet>
+    <AssociationSet Name="FK__usuario__TIPO_US__1920BF5C" Association="mypetModel.FK__usuario__TIPO_US__1920BF5C">
+      <End Role="tipo_usuario" EntitySet="tipo_usuario" />
+      <End Role="usuario" EntitySet="usuario" />
     </AssociationSet>
   </EntityContainer>
-  <EntityType Name="ciudad">
+  <EntityType Name="boleta">
     <Key>
-      <PropertyRef Name="id_ciudad" />
+      <PropertyRef Name="NUMERO" />
     </Key>
-    <Property Name="id_ciudad" Type="String" Nullable="false" MaxLength="5" Unicode="false" FixedLength="true" />
-    <Property Name="descripcion_ciu" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-    <NavigationProperty Name="cliente" Relationship="mypetModel.FK__cliente__id_ciud__1BFD2C07" FromRole="ciudad" ToRole="cliente" />
+    <Property Name="NUMERO" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="DNI" Type="String" MaxLength="8" Unicode="false" FixedLength="false" />
+    <Property Name="RAZON_SOCIAL" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
+    <Property Name="BRUTOS" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="DESCUENTO" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="IGV" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="VALOR_VENTA" Type="Decimal" Precision="10" Scale="2" />
+    <NavigationProperty Name="cliente" Relationship="mypetModel.FK__boleta__DNI__2C3393D0" FromRole="boleta" ToRole="cliente" />
+    <NavigationProperty Name="detalle_boleta" Relationship="mypetModel.FK__detalle_b__NUMER__2F10007B" FromRole="boleta" ToRole="detalle_boleta" />
+  </EntityType>
+  <EntityType Name="cita">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="CODIGO_MEDICO" Type="String" MaxLength="8" Unicode="false" FixedLength="false" />
+    <Property Name="DNI_CLIENTE" Type="String" MaxLength="8" Unicode="false" FixedLength="false" />
+    <Property Name="ID_MASCOTA" Type="Int32" />
+    <Property Name="FECHA" Type="DateTime" Precision="3" />
+    <Property Name="HORA" Type="String" MaxLength="5" Unicode="false" FixedLength="false" />
+    <Property Name="ESTADO" Type="Int32" />
+    <NavigationProperty Name="mascota" Relationship="mypetModel.FK__cita__3E52440B" FromRole="cita" ToRole="mascota" />
+    <NavigationProperty Name="medico" Relationship="mypetModel.FK__cita__CODIGO_MED__3D5E1FD2" FromRole="cita" ToRole="medico" />
+    <NavigationProperty Name="cliente" Relationship="mypetModel.FK__cita__DNI_CLIENT__3F466844" FromRole="cita" ToRole="cliente" />
   </EntityType>
   <EntityType Name="cliente">
     <Key>
-      <PropertyRef Name="id_cliente" />
+      <PropertyRef Name="DNI" />
     </Key>
-    <Property Name="id_cliente" Type="String" Nullable="false" MaxLength="5" Unicode="false" FixedLength="true" />
-    <Property Name="email" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
-    <Property Name="contrasena" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
-    <Property Name="nombre" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-    <Property Name="apellidoPat" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-    <Property Name="apellidoMat" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-    <Property Name="dni" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-    <Property Name="id_sexo" Type="String" Nullable="false" MaxLength="5" Unicode="false" FixedLength="true" />
-    <Property Name="id_pais" Type="String" Nullable="false" MaxLength="5" Unicode="false" FixedLength="true" />
-    <Property Name="id_ciudad" Type="String" Nullable="false" MaxLength="5" Unicode="false" FixedLength="true" />
-    <Property Name="id_distrito" Type="String" Nullable="false" MaxLength="5" Unicode="false" FixedLength="true" />
-    <Property Name="direccion" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-    <Property Name="referencia_direccion" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-    <Property Name="telefono" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-    <Property Name="tipo_usuario" Type="String" Nullable="false" MaxLength="5" Unicode="false" FixedLength="true" />
-    <NavigationProperty Name="ciudad" Relationship="mypetModel.FK__cliente__id_ciud__1BFD2C07" FromRole="cliente" ToRole="ciudad" />
-    <NavigationProperty Name="distrito" Relationship="mypetModel.FK__cliente__id_dist__1CF15040" FromRole="cliente" ToRole="distrito" />
-    <NavigationProperty Name="pais" Relationship="mypetModel.FK__cliente__id_pais__1B0907CE" FromRole="cliente" ToRole="pais" />
-    <NavigationProperty Name="sexo" Relationship="mypetModel.FK__cliente__id_sexo__1A14E395" FromRole="cliente" ToRole="sexo" />
-    <NavigationProperty Name="tipo_usuario1" Relationship="mypetModel.FK__cliente__tipo_us__1DE57479" FromRole="cliente" ToRole="tipo_usuario" />
-    <NavigationProperty Name="mascota" Relationship="mypetModel.FK__mascota__id_clie__267ABA7A" FromRole="cliente" ToRole="mascota" />
+    <Property Name="DNI" Type="String" Nullable="false" MaxLength="8" Unicode="false" FixedLength="false" />
+    <Property Name="NOMBRE" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="APELLIDO_PATERNO" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="APELLIDO_MATERNO" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="DIRECCION" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="CODIGO_POSTAL" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="ID_SEXO" Type="Int32" />
+    <Property Name="EMAIL" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="TELEFONO" Type="String" MaxLength="15" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="boleta" Relationship="mypetModel.FK__boleta__DNI__2C3393D0" FromRole="cliente" ToRole="boleta" />
+    <NavigationProperty Name="cita" Relationship="mypetModel.FK__cita__DNI_CLIENT__3F466844" FromRole="cliente" ToRole="cita" />
+    <NavigationProperty Name="tabla_postal" Relationship="mypetModel.FK__cliente__CODIGO___1BFD2C07" FromRole="cliente" ToRole="tabla_postal" />
+    <NavigationProperty Name="usuario" Relationship="mypetModel.FK__cliente__DNI__1DE57479" FromRole="cliente" ToRole="usuario" />
+    <NavigationProperty Name="sexo" Relationship="mypetModel.FK__cliente__ID_SEXO__1CF15040" FromRole="cliente" ToRole="sexo" />
+    <NavigationProperty Name="mascota" Relationship="mypetModel.FK__mascota__DNI__276EDEB3" FromRole="cliente" ToRole="mascota" />
   </EntityType>
-  <EntityType Name="distrito">
+  <EntityType Name="detalle_boleta">
     <Key>
-      <PropertyRef Name="id_distrito" />
+      <PropertyRef Name="NUMERO" />
+      <PropertyRef Name="ID" />
     </Key>
-    <Property Name="id_distrito" Type="String" Nullable="false" MaxLength="5" Unicode="false" FixedLength="true" />
-    <Property Name="descripcion_dist" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-    <NavigationProperty Name="cliente" Relationship="mypetModel.FK__cliente__id_dist__1CF15040" FromRole="distrito" ToRole="cliente" />
+    <Property Name="NUMERO" Type="Int32" Nullable="false" />
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="CODIGO" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="DESCRIPCION" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="CANTIDAD" Type="Int32" />
+    <Property Name="BRUTO" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="DESCUENTO" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="IGV" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="VALOR_VENTA" Type="Decimal" Precision="10" Scale="2" />
+    <NavigationProperty Name="boleta" Relationship="mypetModel.FK__detalle_b__NUMER__2F10007B" FromRole="detalle_boleta" ToRole="boleta" />
+    <NavigationProperty Name="producto" Relationship="mypetModel.FK__detalle_b__CODIG__300424B4" FromRole="detalle_boleta" ToRole="producto" />
+  </EntityType>
+  <EntityType Name="especialidad">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="DESCRIPCION" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="medico" Relationship="mypetModel.FK__medico__ID_ESPEC__34C8D9D1" FromRole="especialidad" ToRole="medico" />
+  </EntityType>
+  <EntityType Name="especie">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="DESCRIPCION" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="mascota" Relationship="mypetModel.FK__mascota__ID_ESPE__25869641" FromRole="especie" ToRole="mascota" />
+    <NavigationProperty Name="raza" Relationship="mypetModel.FK__raza__ID_ESPECIE__22AA2996" FromRole="especie" ToRole="raza" />
+  </EntityType>
+  <EntityType Name="estado">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="DESCRIPCION" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="usuario" Relationship="mypetModel.FK__usuario__ESTADO__182C9B23" FromRole="estado" ToRole="usuario" />
+  </EntityType>
+  <EntityType Name="historia_clinica">
+    <Key>
+      <PropertyRef Name="ID_MASCOTA" />
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="DNI_CLIENTE" Type="String" Nullable="false" MaxLength="8" Unicode="false" FixedLength="false" />
+    <Property Name="ID_MASCOTA" Type="Int32" Nullable="false" />
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="CITA" Type="Int32" />
+    <Property Name="RECETA" Type="Int32" />
+    <Property Name="DESCRIPCION" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="mascota" Relationship="mypetModel.FK__historia_clinica__3A81B327" FromRole="historia_clinica" ToRole="mascota" />
   </EntityType>
   <EntityType Name="mascota">
     <Key>
-      <PropertyRef Name="id_mascota" />
+      <PropertyRef Name="DNI" />
+      <PropertyRef Name="ID" />
     </Key>
-    <Property Name="id_mascota" Type="String" Nullable="false" MaxLength="5" Unicode="false" FixedLength="true" />
-    <Property Name="nombre_mascota" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-    <Property Name="fecha_nac" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-    <Property Name="id_raza" Type="String" Nullable="false" MaxLength="5" Unicode="false" FixedLength="true" />
-    <Property Name="id_tamaño" Type="String" Nullable="false" MaxLength="5" Unicode="false" FixedLength="true" />
-    <Property Name="id_cliente" Type="String" Nullable="false" MaxLength="5" Unicode="false" FixedLength="true" />
-    <NavigationProperty Name="cliente" Relationship="mypetModel.FK__mascota__id_clie__267ABA7A" FromRole="mascota" ToRole="cliente" />
-    <NavigationProperty Name="raza" Relationship="mypetModel.FK__mascota__id_raza__24927208" FromRole="mascota" ToRole="raza" />
-    <NavigationProperty Name="tamaño" Relationship="mypetModel.FK__mascota__id_tama__25869641" FromRole="mascota" ToRole="tamaño" />
+    <Property Name="DNI" Type="String" Nullable="false" MaxLength="8" Unicode="false" FixedLength="false" />
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="NOMBRE" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+    <Property Name="ID_ESPECIE" Type="Int32" />
+    <Property Name="ID_RAZA" Type="Int32" />
+    <Property Name="FECHA_NACIMIENTO" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="cita" Relationship="mypetModel.FK__cita__3E52440B" FromRole="mascota" ToRole="cita" />
+    <NavigationProperty Name="cliente" Relationship="mypetModel.FK__mascota__DNI__276EDEB3" FromRole="mascota" ToRole="cliente" />
+    <NavigationProperty Name="especie" Relationship="mypetModel.FK__mascota__ID_ESPE__25869641" FromRole="mascota" ToRole="especie" />
+    <NavigationProperty Name="historia_clinica" Relationship="mypetModel.FK__historia_clinica__3A81B327" FromRole="mascota" ToRole="historia_clinica" />
+    <NavigationProperty Name="raza" Relationship="mypetModel.FK__mascota__267ABA7A" FromRole="mascota" ToRole="raza" />
   </EntityType>
-  <EntityType Name="pais">
+  <EntityType Name="medico">
     <Key>
-      <PropertyRef Name="id_pais" />
+      <PropertyRef Name="CODIGO" />
     </Key>
-    <Property Name="id_pais" Type="String" Nullable="false" MaxLength="5" Unicode="false" FixedLength="true" />
-    <Property Name="descrip_pais" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-    <NavigationProperty Name="cliente" Relationship="mypetModel.FK__cliente__id_pais__1B0907CE" FromRole="pais" ToRole="cliente" />
+    <Property Name="CODIGO" Type="String" Nullable="false" MaxLength="8" Unicode="false" FixedLength="false" />
+    <Property Name="NOMBRE" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="APELLIDO_PATERNO" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="APELLIDO_MATERNO" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="ID_ESPECIALIDAD" Type="Int32" />
+    <Property Name="FECHA_NACIMIENTO" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="cita" Relationship="mypetModel.FK__cita__CODIGO_MED__3D5E1FD2" FromRole="medico" ToRole="cita" />
+    <NavigationProperty Name="especialidad" Relationship="mypetModel.FK__medico__ID_ESPEC__34C8D9D1" FromRole="medico" ToRole="especialidad" />
+    <NavigationProperty Name="usuario" Relationship="mypetModel.FK__medico__CODIGO__35BCFE0A" FromRole="medico" ToRole="usuario" />
+  </EntityType>
+  <EntityType Name="producto">
+    <Key>
+      <PropertyRef Name="CODIGO" />
+    </Key>
+    <Property Name="CODIGO" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="DESCRIPCION" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="STOCK_ACTUAL" Type="Int32" />
+    <Property Name="STOCK_DISPONIBLE" Type="Int32" />
+    <Property Name="PRECIO" Type="Decimal" Precision="10" Scale="2" />
+    <NavigationProperty Name="detalle_boleta" Relationship="mypetModel.FK__detalle_b__CODIG__300424B4" FromRole="producto" ToRole="detalle_boleta" />
   </EntityType>
   <EntityType Name="raza">
     <Key>
-      <PropertyRef Name="id_raza" />
+      <PropertyRef Name="ID_ESPECIE" />
+      <PropertyRef Name="ID" />
     </Key>
-    <Property Name="id_raza" Type="String" Nullable="false" MaxLength="5" Unicode="false" FixedLength="true" />
-    <Property Name="descripcion_raza" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-    <NavigationProperty Name="mascota" Relationship="mypetModel.FK__mascota__id_raza__24927208" FromRole="raza" ToRole="mascota" />
+    <Property Name="ID_ESPECIE" Type="Int32" Nullable="false" />
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="DESCRIPCION" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="especie" Relationship="mypetModel.FK__raza__ID_ESPECIE__22AA2996" FromRole="raza" ToRole="especie" />
+    <NavigationProperty Name="mascota" Relationship="mypetModel.FK__mascota__267ABA7A" FromRole="raza" ToRole="mascota" />
   </EntityType>
   <EntityType Name="sexo">
     <Key>
-      <PropertyRef Name="id_sexo" />
+      <PropertyRef Name="ID" />
     </Key>
-    <Property Name="id_sexo" Type="String" Nullable="false" MaxLength="5" Unicode="false" FixedLength="true" />
-    <Property Name="descrip_sexo" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-    <NavigationProperty Name="cliente" Relationship="mypetModel.FK__cliente__id_sexo__1A14E395" FromRole="sexo" ToRole="cliente" />
+    <Property Name="ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="DESCRIPCION" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="cliente" Relationship="mypetModel.FK__cliente__ID_SEXO__1CF15040" FromRole="sexo" ToRole="cliente" />
   </EntityType>
-  <EntityType Name="tamaño">
+  <EntityType Name="tabla_postal">
     <Key>
-      <PropertyRef Name="id_tamaño" />
+      <PropertyRef Name="CODIGO" />
     </Key>
-    <Property Name="id_tamaño" Type="String" Nullable="false" MaxLength="5" Unicode="false" FixedLength="true" />
-    <Property Name="descripcion_tamaño" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-    <NavigationProperty Name="mascota" Relationship="mypetModel.FK__mascota__id_tama__25869641" FromRole="tamaño" ToRole="mascota" />
+    <Property Name="CODIGO" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="DESCRIPCION" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="cliente" Relationship="mypetModel.FK__cliente__CODIGO___1BFD2C07" FromRole="tabla_postal" ToRole="cliente" />
   </EntityType>
   <EntityType Name="tipo_usuario">
     <Key>
-      <PropertyRef Name="tipo_usuario1" />
+      <PropertyRef Name="ID" />
     </Key>
-    <Property Name="tipo_usuario1" Type="String" Nullable="false" MaxLength="5" Unicode="false" FixedLength="true" />
-    <Property Name="descrip_usuario" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-    <NavigationProperty Name="cliente" Relationship="mypetModel.FK__cliente__tipo_us__1DE57479" FromRole="tipo_usuario" ToRole="cliente" />
+    <Property Name="ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="DESCRIPCION" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="usuario" Relationship="mypetModel.FK__usuario__TIPO_US__1920BF5C" FromRole="tipo_usuario" ToRole="usuario" />
   </EntityType>
-  <Association Name="FK__cliente__id_ciud__1BFD2C07">
-    <End Role="ciudad" Type="mypetModel.ciudad" Multiplicity="1" />
-    <End Role="cliente" Type="mypetModel.cliente" Multiplicity="*" />
+  <EntityType Name="usuario">
+    <Key>
+      <PropertyRef Name="CODIGO" />
+    </Key>
+    <Property Name="CODIGO" Type="String" Nullable="false" MaxLength="8" Unicode="false" FixedLength="false" />
+    <Property Name="NOMBRE" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="APELLIDO_PATERNO" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="APELLIDO_MATERNO" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="EMAIL" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="FECHA_INGRESO" Type="DateTime" Precision="3" />
+    <Property Name="ESTADO" Type="Int32" />
+    <Property Name="TIPO_USUARIOS" Type="Int32" />
+    <NavigationProperty Name="cliente" Relationship="mypetModel.FK__cliente__DNI__1DE57479" FromRole="usuario" ToRole="cliente" />
+    <NavigationProperty Name="estado1" Relationship="mypetModel.FK__usuario__ESTADO__182C9B23" FromRole="usuario" ToRole="estado" />
+    <NavigationProperty Name="medico" Relationship="mypetModel.FK__medico__CODIGO__35BCFE0A" FromRole="usuario" ToRole="medico" />
+    <NavigationProperty Name="tipo_usuario" Relationship="mypetModel.FK__usuario__TIPO_US__1920BF5C" FromRole="usuario" ToRole="tipo_usuario" />
+  </EntityType>
+  <EntityType Name="variables">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="RAZON_SOCIAL" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="PORCENTAJE_IGV" Type="Decimal" Precision="3" Scale="2" />
+  </EntityType>
+  <Association Name="FK__boleta__DNI__2C3393D0">
+    <End Role="cliente" Type="mypetModel.cliente" Multiplicity="0..1" />
+    <End Role="boleta" Type="mypetModel.boleta" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="ciudad">
-        <PropertyRef Name="id_ciudad" />
+      <Principal Role="cliente">
+        <PropertyRef Name="DNI" />
       </Principal>
-      <Dependent Role="cliente">
-        <PropertyRef Name="id_ciudad" />
+      <Dependent Role="boleta">
+        <PropertyRef Name="DNI" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__cliente__id_dist__1CF15040">
-    <End Role="distrito" Type="mypetModel.distrito" Multiplicity="1" />
-    <End Role="cliente" Type="mypetModel.cliente" Multiplicity="*" />
+  <Association Name="FK__detalle_b__NUMER__2F10007B">
+    <End Role="boleta" Type="mypetModel.boleta" Multiplicity="1" />
+    <End Role="detalle_boleta" Type="mypetModel.detalle_boleta" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="distrito">
-        <PropertyRef Name="id_distrito" />
+      <Principal Role="boleta">
+        <PropertyRef Name="NUMERO" />
       </Principal>
-      <Dependent Role="cliente">
-        <PropertyRef Name="id_distrito" />
+      <Dependent Role="detalle_boleta">
+        <PropertyRef Name="NUMERO" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__cliente__id_pais__1B0907CE">
-    <End Role="pais" Type="mypetModel.pais" Multiplicity="1" />
-    <End Role="cliente" Type="mypetModel.cliente" Multiplicity="*" />
+  <Association Name="FK__cita__3E52440B">
+    <End Role="mascota" Type="mypetModel.mascota" Multiplicity="0..1" />
+    <End Role="cita" Type="mypetModel.cita" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="pais">
-        <PropertyRef Name="id_pais" />
+      <Principal Role="mascota">
+        <PropertyRef Name="DNI" />
+        <PropertyRef Name="ID" />
       </Principal>
-      <Dependent Role="cliente">
-        <PropertyRef Name="id_pais" />
+      <Dependent Role="cita">
+        <PropertyRef Name="DNI_CLIENTE" />
+        <PropertyRef Name="ID_MASCOTA" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__cliente__id_sexo__1A14E395">
-    <End Role="sexo" Type="mypetModel.sexo" Multiplicity="1" />
+  <Association Name="FK__cita__CODIGO_MED__3D5E1FD2">
+    <End Role="medico" Type="mypetModel.medico" Multiplicity="0..1" />
+    <End Role="cita" Type="mypetModel.cita" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="medico">
+        <PropertyRef Name="CODIGO" />
+      </Principal>
+      <Dependent Role="cita">
+        <PropertyRef Name="CODIGO_MEDICO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__cita__DNI_CLIENT__3F466844">
+    <End Role="cliente" Type="mypetModel.cliente" Multiplicity="0..1" />
+    <End Role="cita" Type="mypetModel.cita" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="cliente">
+        <PropertyRef Name="DNI" />
+      </Principal>
+      <Dependent Role="cita">
+        <PropertyRef Name="DNI_CLIENTE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__cliente__CODIGO___1BFD2C07">
+    <End Role="tabla_postal" Type="mypetModel.tabla_postal" Multiplicity="0..1" />
+    <End Role="cliente" Type="mypetModel.cliente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tabla_postal">
+        <PropertyRef Name="CODIGO" />
+      </Principal>
+      <Dependent Role="cliente">
+        <PropertyRef Name="CODIGO_POSTAL" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__cliente__DNI__1DE57479">
+    <End Role="usuario" Type="mypetModel.usuario" Multiplicity="1" />
+    <End Role="cliente" Type="mypetModel.cliente" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="usuario">
+        <PropertyRef Name="CODIGO" />
+      </Principal>
+      <Dependent Role="cliente">
+        <PropertyRef Name="DNI" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__cliente__ID_SEXO__1CF15040">
+    <End Role="sexo" Type="mypetModel.sexo" Multiplicity="0..1" />
     <End Role="cliente" Type="mypetModel.cliente" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="sexo">
-        <PropertyRef Name="id_sexo" />
+        <PropertyRef Name="ID" />
       </Principal>
       <Dependent Role="cliente">
-        <PropertyRef Name="id_sexo" />
+        <PropertyRef Name="ID_SEXO" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__cliente__tipo_us__1DE57479">
-    <End Role="tipo_usuario" Type="mypetModel.tipo_usuario" Multiplicity="1" />
-    <End Role="cliente" Type="mypetModel.cliente" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tipo_usuario">
-        <PropertyRef Name="tipo_usuario1" />
-      </Principal>
-      <Dependent Role="cliente">
-        <PropertyRef Name="tipo_usuario" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__mascota__id_clie__267ABA7A">
+  <Association Name="FK__mascota__DNI__276EDEB3">
     <End Role="cliente" Type="mypetModel.cliente" Multiplicity="1" />
     <End Role="mascota" Type="mypetModel.mascota" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="cliente">
-        <PropertyRef Name="id_cliente" />
+        <PropertyRef Name="DNI" />
       </Principal>
       <Dependent Role="mascota">
-        <PropertyRef Name="id_cliente" />
+        <PropertyRef Name="DNI" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__mascota__id_raza__24927208">
-    <End Role="raza" Type="mypetModel.raza" Multiplicity="1" />
+  <Association Name="FK__detalle_b__CODIG__300424B4">
+    <End Role="producto" Type="mypetModel.producto" Multiplicity="0..1" />
+    <End Role="detalle_boleta" Type="mypetModel.detalle_boleta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="producto">
+        <PropertyRef Name="CODIGO" />
+      </Principal>
+      <Dependent Role="detalle_boleta">
+        <PropertyRef Name="CODIGO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__medico__ID_ESPEC__34C8D9D1">
+    <End Role="especialidad" Type="mypetModel.especialidad" Multiplicity="0..1" />
+    <End Role="medico" Type="mypetModel.medico" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="especialidad">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="medico">
+        <PropertyRef Name="ID_ESPECIALIDAD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__mascota__ID_ESPE__25869641">
+    <End Role="especie" Type="mypetModel.especie" Multiplicity="0..1" />
+    <End Role="mascota" Type="mypetModel.mascota" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="especie">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="mascota">
+        <PropertyRef Name="ID_ESPECIE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__raza__ID_ESPECIE__22AA2996">
+    <End Role="especie" Type="mypetModel.especie" Multiplicity="1" />
+    <End Role="raza" Type="mypetModel.raza" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="especie">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="raza">
+        <PropertyRef Name="ID_ESPECIE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__usuario__ESTADO__182C9B23">
+    <End Role="estado" Type="mypetModel.estado" Multiplicity="0..1" />
+    <End Role="usuario" Type="mypetModel.usuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="estado">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="usuario">
+        <PropertyRef Name="ESTADO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__historia_clinica__3A81B327">
+    <End Role="mascota" Type="mypetModel.mascota" Multiplicity="1" />
+    <End Role="historia_clinica" Type="mypetModel.historia_clinica" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="mascota">
+        <PropertyRef Name="DNI" />
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="historia_clinica">
+        <PropertyRef Name="DNI_CLIENTE" />
+        <PropertyRef Name="ID_MASCOTA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__mascota__267ABA7A">
+    <End Role="raza" Type="mypetModel.raza" Multiplicity="0..1" />
     <End Role="mascota" Type="mypetModel.mascota" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="raza">
-        <PropertyRef Name="id_raza" />
+        <PropertyRef Name="ID_ESPECIE" />
+        <PropertyRef Name="ID" />
       </Principal>
       <Dependent Role="mascota">
-        <PropertyRef Name="id_raza" />
+        <PropertyRef Name="ID_ESPECIE" />
+        <PropertyRef Name="ID_RAZA" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__mascota__id_tama__25869641">
-    <End Role="tamaño" Type="mypetModel.tamaño" Multiplicity="1" />
-    <End Role="mascota" Type="mypetModel.mascota" Multiplicity="*" />
+  <Association Name="FK__medico__CODIGO__35BCFE0A">
+    <End Role="usuario" Type="mypetModel.usuario" Multiplicity="1" />
+    <End Role="medico" Type="mypetModel.medico" Multiplicity="0..1" />
     <ReferentialConstraint>
-      <Principal Role="tamaño">
-        <PropertyRef Name="id_tamaño" />
+      <Principal Role="usuario">
+        <PropertyRef Name="CODIGO" />
       </Principal>
-      <Dependent Role="mascota">
-        <PropertyRef Name="id_tamaño" />
+      <Dependent Role="medico">
+        <PropertyRef Name="CODIGO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__usuario__TIPO_US__1920BF5C">
+    <End Role="tipo_usuario" Type="mypetModel.tipo_usuario" Multiplicity="0..1" />
+    <End Role="usuario" Type="mypetModel.usuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tipo_usuario">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="usuario">
+        <PropertyRef Name="TIPO_USUARIOS" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

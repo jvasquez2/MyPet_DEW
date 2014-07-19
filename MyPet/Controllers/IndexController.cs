@@ -32,17 +32,17 @@ namespace MyPet.Controllers
             return View();
         }
 
-        public ActionResult Productos()
-        {
-            var lista = from p in mp.ciudad
-                         select new Ciudad
-                         {
-                             id_ciudad = p.id_ciudad,
-                             descrip_ciudad = p.descripcion_ciu
-                         };
-
-             return View(lista);
-        }
+        //public ActionResult Productos()
+        //{
+        //    var lista = from p in mp.ciudad
+        //                 select new Ciudad
+        //                 {
+        //                     id_ciudad = p.id_ciudad,
+        //                     descrip_ciudad = p.descripcion_ciu
+        //                 };
+        //
+        //     return View(lista);
+        //}
 
 
 

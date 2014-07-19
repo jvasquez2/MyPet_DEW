@@ -12,16 +12,16 @@ namespace MyPet
     using System;
     using System.Collections.Generic;
     
-    public partial class ciudad
+    public partial class estado
     {
-        public ciudad()
+        public estado()
         {
-            this.cliente = new HashSet<cliente>();
+            this.usuario = new HashSet<usuario>();
         }
     
-        public string id_ciudad { get; set; }
-        public string descripcion_ciu { get; set; }
+        public int ID { get; set; }
+        public string DESCRIPCION { get; set; }
     
-        public virtual ICollection<cliente> cliente { get; set; }
+        public virtual ICollection<usuario> usuario { get; set; }
     }
 }

@@ -12,16 +12,18 @@ namespace MyPet
     using System;
     using System.Collections.Generic;
     
-    public partial class pais
+    public partial class especie
     {
-        public pais()
+        public especie()
         {
-            this.cliente = new HashSet<cliente>();
+            this.mascota = new HashSet<mascota>();
+            this.raza = new HashSet<raza>();
         }
     
-        public string id_pais { get; set; }
-        public string descrip_pais { get; set; }
+        public int ID { get; set; }
+        public string DESCRIPCION { get; set; }
     
-        public virtual ICollection<cliente> cliente { get; set; }
+        public virtual ICollection<mascota> mascota { get; set; }
+        public virtual ICollection<raza> raza { get; set; }
     }
 }

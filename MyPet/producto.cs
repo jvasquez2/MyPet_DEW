@@ -12,16 +12,19 @@ namespace MyPet
     using System;
     using System.Collections.Generic;
     
-    public partial class sexo
+    public partial class producto
     {
-        public sexo()
+        public producto()
         {
-            this.cliente = new HashSet<cliente>();
+            this.detalle_boleta = new HashSet<detalle_boleta>();
         }
     
-        public int ID { get; set; }
+        public string CODIGO { get; set; }
         public string DESCRIPCION { get; set; }
+        public Nullable<int> STOCK_ACTUAL { get; set; }
+        public Nullable<int> STOCK_DISPONIBLE { get; set; }
+        public Nullable<decimal> PRECIO { get; set; }
     
-        public virtual ICollection<cliente> cliente { get; set; }
+        public virtual ICollection<detalle_boleta> detalle_boleta { get; set; }
     }
 }
