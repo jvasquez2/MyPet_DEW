@@ -12,25 +12,22 @@ namespace MyPet
     using System;
     using System.Collections.Generic;
     
-    public partial class mascota
+    public partial class boleta
     {
-        public mascota()
+        public boleta()
         {
-            this.cita = new HashSet<cita>();
-            this.historia_clinica = new HashSet<historia_clinica>();
+            this.detalle_boleta = new HashSet<detalle_boleta>();
         }
     
+        public int NUMERO { get; set; }
         public string DNI { get; set; }
-        public int ID { get; set; }
-        public string NOMBRE { get; set; }
-        public Nullable<int> ID_ESPECIE { get; set; }
-        public Nullable<int> ID_RAZA { get; set; }
-        public Nullable<System.DateTime> FECHA_NACIMIENTO { get; set; }
+        public string RAZON_SOCIAL { get; set; }
+        public Nullable<decimal> BRUTOS { get; set; }
+        public Nullable<decimal> DESCUENTO { get; set; }
+        public Nullable<decimal> IGV { get; set; }
+        public Nullable<decimal> VALOR_VENTA { get; set; }
     
-        public virtual ICollection<cita> cita { get; set; }
         public virtual cliente cliente { get; set; }
-        public virtual especie especie { get; set; }
-        public virtual ICollection<historia_clinica> historia_clinica { get; set; }
-        public virtual raza raza { get; set; }
+        public virtual ICollection<detalle_boleta> detalle_boleta { get; set; }
     }
 }
