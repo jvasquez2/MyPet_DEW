@@ -10,7 +10,7 @@ namespace MyPet.Controllers
     public class IndexController : Controller
     {
 
-        mypetEntities mp = new mypetEntities();
+        mypetEntities1 mp = new mypetEntities1();
 
         public ActionResult Index()
         {

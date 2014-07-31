@@ -118,7 +118,7 @@
           <Property Name="ID_MASCOTA" Type="int" />
           <Property Name="FECHA" Type="datetime" />
           <Property Name="HORA" Type="varchar" MaxLength="5" />
-          <Property Name="ESTADO" Type="int" />
+          <Property Name="ESTADO" Type="varchar" Nullable="false" MaxLength="1" />
         </EntityType>
         <EntityType Name="cliente">
           <Key>
@@ -250,6 +250,7 @@
             <PropertyRef Name="CODIGO" />
           </Key>
           <Property Name="CODIGO" Type="varchar" Nullable="false" MaxLength="8" />
+          <Property Name="CONTRASENA" Type="varchar" Nullable="false" MaxLength="8" />
           <Property Name="NOMBRE" Type="varchar" MaxLength="100" />
           <Property Name="APELLIDO_PATERNO" Type="varchar" MaxLength="100" />
           <Property Name="APELLIDO_MATERNO" Type="varchar" MaxLength="100" />
@@ -493,7 +494,7 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="mypetModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityContainer Name="mypetEntities" p1:LazyLoadingEnabled="true">
+        <EntityContainer Name="mypetEntities1" p1:LazyLoadingEnabled="true">
           <EntitySet Name="boleta" EntityType="mypetModel.boleta" />
           <EntitySet Name="cita" EntityType="mypetModel.cita" />
           <EntitySet Name="cliente" EntityType="mypetModel.cliente" />
@@ -608,7 +609,7 @@
           <Property Name="ID_MASCOTA" Type="Int32" />
           <Property Name="FECHA" Type="DateTime" Precision="3" />
           <Property Name="HORA" Type="String" MaxLength="5" Unicode="false" FixedLength="false" />
-          <Property Name="ESTADO" Type="Int32" />
+          <Property Name="ESTADO" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="false" />
           <NavigationProperty Name="mascota" Relationship="mypetModel.FK__cita__3E52440B" FromRole="cita" ToRole="mascota" />
           <NavigationProperty Name="medico" Relationship="mypetModel.FK__cita__CODIGO_MED__3D5E1FD2" FromRole="cita" ToRole="medico" />
           <NavigationProperty Name="cliente" Relationship="mypetModel.FK__cita__DNI_CLIENT__3F466844" FromRole="cita" ToRole="cliente" />
@@ -770,6 +771,7 @@
             <PropertyRef Name="CODIGO" />
           </Key>
           <Property Name="CODIGO" Type="String" Nullable="false" MaxLength="8" Unicode="false" FixedLength="false" />
+          <Property Name="CONTRASENA" Type="String" Nullable="false" MaxLength="8" Unicode="false" FixedLength="false" />
           <Property Name="NOMBRE" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
           <Property Name="APELLIDO_PATERNO" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
           <Property Name="APELLIDO_MATERNO" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
@@ -1017,7 +1019,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="mypetModelStoreContainer" CdmEntityContainer="mypetEntities">
+        <EntityContainerMapping StorageEntityContainer="mypetModelStoreContainer" CdmEntityContainer="mypetEntities1">
           <EntitySetMapping Name="boleta">
             <EntityTypeMapping TypeName="mypetModel.boleta">
               <MappingFragment StoreEntitySet="boleta">
@@ -1182,6 +1184,7 @@
             <EntityTypeMapping TypeName="mypetModel.usuario">
               <MappingFragment StoreEntitySet="usuario">
                 <ScalarProperty Name="CODIGO" ColumnName="CODIGO" />
+                <ScalarProperty Name="CONTRASENA" ColumnName="CONTRASENA" />
                 <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
                 <ScalarProperty Name="APELLIDO_PATERNO" ColumnName="APELLIDO_PATERNO" />
                 <ScalarProperty Name="APELLIDO_MATERNO" ColumnName="APELLIDO_MATERNO" />

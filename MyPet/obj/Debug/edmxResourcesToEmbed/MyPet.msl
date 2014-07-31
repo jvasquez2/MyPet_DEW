@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="mypetModelStoreContainer" CdmEntityContainer="mypetEntities">
+  <EntityContainerMapping StorageEntityContainer="mypetModelStoreContainer" CdmEntityContainer="mypetEntities1">
     <EntitySetMapping Name="boleta">
       <EntityTypeMapping TypeName="mypetModel.boleta">
         <MappingFragment StoreEntitySet="boleta">
@@ -165,6 +165,7 @@
       <EntityTypeMapping TypeName="mypetModel.usuario">
         <MappingFragment StoreEntitySet="usuario">
           <ScalarProperty Name="CODIGO" ColumnName="CODIGO" />
+          <ScalarProperty Name="CONTRASENA" ColumnName="CONTRASENA" />
           <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
           <ScalarProperty Name="APELLIDO_PATERNO" ColumnName="APELLIDO_PATERNO" />
           <ScalarProperty Name="APELLIDO_MATERNO" ColumnName="APELLIDO_MATERNO" />

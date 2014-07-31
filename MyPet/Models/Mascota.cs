@@ -14,5 +14,5 @@ namespace MyPet.Models
         public int id_raza { get; set; }
         public DateTime fecha_nacimiento { get; set; }
 
-    }
+}
 }

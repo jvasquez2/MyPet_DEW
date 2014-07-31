@@ -113,7 +113,7 @@
     <Property Name="ID_MASCOTA" Type="int" />
     <Property Name="FECHA" Type="datetime" />
     <Property Name="HORA" Type="varchar" MaxLength="5" />
-    <Property Name="ESTADO" Type="int" />
+    <Property Name="ESTADO" Type="varchar" Nullable="false" MaxLength="1" />
   </EntityType>
   <EntityType Name="cliente">
     <Key>
@@ -245,6 +245,7 @@
       <PropertyRef Name="CODIGO" />
     </Key>
     <Property Name="CODIGO" Type="varchar" Nullable="false" MaxLength="8" />
+    <Property Name="CONTRASENA" Type="varchar" Nullable="false" MaxLength="8" />
     <Property Name="NOMBRE" Type="varchar" MaxLength="100" />
     <Property Name="APELLIDO_PATERNO" Type="varchar" MaxLength="100" />
     <Property Name="APELLIDO_MATERNO" Type="varchar" MaxLength="100" />

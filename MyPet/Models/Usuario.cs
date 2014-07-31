@@ -7,13 +7,14 @@ namespace MyPet.Models
 {
     public class Usuario
     {
-        public string codigo { get; set; }
-        public string nombre { get; set; }
-        public string apellido_paterno { get; set; }
-        public string apellido_materno { get; set; }
-        public string email { get; set; }
-        public DateTime fecha_ingreso { get; set; }
-        public int estado { get; set; }
-        public int tipo_usuarios { get; set; }
+        public string CODIGO { get; set; }
+        public string CONTRASENA { get; set; }
+        public string NOMBRE { get; set; }
+        public string APELLIDO_PATERNO { get; set; }
+        public string APELIDO_MATERNO { get; set; }
+        public string EMAIL { get; set; }
+        public DateTime FECHA_INGRESO { get; set; }
+        public int ESTADO { get; set; }
+        public int TIPO_USUARIOS { get; set; }
     }
 }

@@ -20,7 +20,7 @@ namespace MyPet
         public Nullable<int> ID_MASCOTA { get; set; }
         public Nullable<System.DateTime> FECHA { get; set; }
         public string HORA { get; set; }
-        public Nullable<int> ESTADO { get; set; }
+        public string ESTADO { get; set; }
     
         public virtual mascota mascota { get; set; }
         public virtual medico medico { get; set; }

@@ -3,9 +3,7 @@
     ViewBag.Title = "RegistroCliente";
 
     SelectList sexo = (SelectList)ViewBag.sexo;
-    SelectList pais = (SelectList)ViewBag.pais;
-    SelectList ciudad = (SelectList)ViewBag.ciudad;
-    SelectList distrito = (SelectList)ViewBag.distrito;
+    SelectList tablapostal = (SelectList)ViewBag.tablapostal;
 }
 
 <title>RegistroCliente</title>
@@ -35,41 +33,25 @@
         </div><br><br>
         <h5> * Indica que el campo es obligatorio</h5>
 		<hr>
-			<h3>Información De Cuenta</h3>
+			
 		<hr>
-		<table style="height: 168px; width: 586px; ">
-			<tr style="width: 855px; ">
-				<td style="width: 59px; height: 94px">
-				<td style="width: 127px; ">
-					<div class="milabel">
-						<label>* Correo electrónico:	</label>
-					</div>
-				<td style="width: 281px; ">
-                    <div class="inputt" style="width: 229px;">@Html.EditorFor(Model=>Model.email)</div>	
-                    	<br>
-				</td>
-			</tr>
-			
-			<tr style="width: 855px; ">
-				<td style="width: 106px; ">
-				<td style="width: 151px; ">
-					<div class="milabel">
-						<label>* Contraseña:	</label>
-					</div>
-				<td style="width: 281px; ">
-                    <div class="inputt" style="width: 229px;">@Html.EditorFor(Model=>Model.contrasena)</div>	
-                    	<br>
-				</td>
-			</tr>
-			
-		</table>
 		<br>
 		
 		<hr>
-			<h3>Información Personal</h3>
+			<h3>Datos del Cliente</h3>
 		<hr>
 		
 		<table>
+            <tr>
+			<td style="width: 74px; ">
+				<td><div class="milabel">
+						<label>* DNI:	</label>
+					</div>
+				<td>
+                    <div class="inputt" style="width: 229px;">@Html.EditorFor(Model => Model.dni)</div>	
+                    <br>
+				</td>
+			</tr>
 			<tr>
 			<td style="width: 37px; height: 94px">
 				<td style="width: 140px; ">
@@ -85,7 +67,7 @@
 				</td>
 				<td>
 					<div class="milabel">
-						<label>Apellido Paterno:	</label>
+						<label>*Apellido Paterno:	</label>
 					</div>
 				</td>
 				<td>
@@ -99,21 +81,45 @@
 						<label>*Apellido Materno:	</label>
 					</div>
 				<td>
-                    <div class="inputt" style="width: 229px;">@Html.EditorFor(Model=>Model.apellido_materno)</div>	
+                    <div class="inputt" style="width: 229px;">@Html.EditorFor(Model=>Model.apelido_materno)</div>	
                     <br>
 				</td>
 			</tr>
-			<tr>
+
+            <tr style="width: 855px; ">
+				<td style="width: 59px; height: 94px">
+				<td style="width: 127px; ">
+					<div class="milabel">
+						<label>* Correo electrónico:	</label>
+					</div>
+				<td style="width: 281px; ">
+                    <div class="inputt" style="width: 229px;">@Html.EditorFor(Model=>Model.email)</div>	
+                    	<br>
+				</td>
+			</tr>
+
+            <tr>
 			<td style="width: 74px; ">
 				<td><div class="milabel">
-						<label>* DNI:	</label>
+						<label>* Direccion:	</label>
 					</div>
 				<td>
-                    <div class="inputt" style="width: 229px;">@Html.EditorFor(Model=>Model.dni)</div>	
-                    <br>
+                    <div class="inputt" style="width: 229px;">@Html.EditorFor(Model=>Model.direccion)</div>	
+                     	<br>
 				</td>
 			</tr>
-           
+
+            	<tr>
+			<td style="width: 74px; ">
+				<td><div class="milabel">
+						<label>* Distrito:	</label>
+					</div>
+				<td>
+                    <div class="inputt" style="width: 229px;">@Html.DropDownListFor(Model=>Model.codigo_postal, tablapostal, "(Seleccione distrito)")</div>	
+                     	<br>
+				</td>
+			</tr>
+			           
 			<tr>
 			<td style="width: 74px; ">
 				<td><div class="milabel">
@@ -124,59 +130,8 @@
                     
 				</td>
 			</tr><br>
-            <tr>
-			<td style="width: 74px; ">
-				<td><div class="milabel">
-						<label>* Pais:	</label>
-					</div>
-				<td>
-                    <div class="inputt" style="width: 229px;">@Html.DropDownListFor(Model=>Model.id_pais, pais, "(Seleccione pais)")</div>	
-                    
-				</td>
-			</tr><br>
-			<tr>
-			<td style="width: 74px; ">
-				<td><div class="milabel">
-						<label>* Ciudad:	</label>
-					</div>
-				<td>
-                    <div class="inputt" style="width: 229px;">@Html.DropDownListFor(Model=>Model.id_ciudad, ciudad, "(Seleccione ciudad)")</div>	
-                     	<br>
-				</td>
-			</tr>
-			<tr>
-			<td style="width: 74px; ">
-				<td><div class="milabel">
-						<label>* Distrito:	</label>
-					</div>
-				<td>
-                    <div class="inputt" style="width: 229px;">@Html.DropDownListFor(Model=>Model.id_distrito, distrito, "(Seleccione distrito)")</div>	
-                     	<br>
-				</td>
-			</tr>
-			<tr>
-			<td style="width: 74px; ">
-				<td><div class="milabel">
-						<label>* Direccion:	</label>
-					</div>
-				<td>
-                    <div class="inputt" style="width: 229px;">@Html.EditorFor(Model=>Model.direccion)</div>	
-                     	<br>
-				</td>
-			</tr>
-			<tr>
-			<td style="width: 74px; ">
-				
-				
-				<td style="width: 108px; "><div class="milabel">
-						<label>* Refencia:	</label>
-					</div>
-				<td>
-                    <div class="inputt" style="width: 229px;">@Html.EditorFor(Model=>Model.referencia_direccion)</div>	
-                    	<br>
-				</td>
-			</tr>
-			
+           
+						
 			<tr>
 			<td style="width: 74px; ">
 				
@@ -197,7 +152,7 @@
 					
 				</td>
 				<td>
-                    <div><input type="submit" value="Crear" class="button"/></div>
+                    <div><input type="submit" value="Registrar Cliente"/></div>
                       
 				</td> 
 				<td>
@@ -212,7 +167,7 @@
     </div>
 </header>
             }
-    
+   
 <!-- Footer -->
 <footer>
     <div class="copyright">
