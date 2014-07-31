@@ -1,5 +1,6 @@
 ﻿@{
     ViewBag.Title = "Index";
+    ViewBag.Usuario = "Usuario";
 }
 
 <!DOCTYPE html>
@@ -63,6 +64,11 @@
                     <li class="current">
                         <a href="../Index/Inicio">inicio</a>
                     </li>
+
+                    @using (Html.BeginForm())
+                    {
+                        @if(Model.
+                    }
                     <li><a href="/Index/Nosotros">nosotros</a></li>
                     <li><a href="/Index/Servicios">servicios</a></li>
                     <li><a href="../Index/Inicio">productos</a></li>
