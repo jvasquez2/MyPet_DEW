@@ -4,24 +4,42 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="69b706720bd94172be127730ff652254" Name="Diagrama1">
-        <EntityTypeShape EntityType="mypetModel.ciudad" Width="1.5" PointX="0.75" PointY="2.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="mypetModel.cliente" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="mypetModel.distrito" Width="1.5" PointX="0.75" PointY="6" IsExpanded="true" />
-        <EntityTypeShape EntityType="mypetModel.mascota" Width="1.5" PointX="5.25" PointY="2.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="mypetModel.pais" Width="1.5" PointX="0.75" PointY="8.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="mypetModel.raza" Width="1.5" PointX="3" PointY="7.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="mypetModel.sexo" Width="1.5" PointX="0.75" PointY="10.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="mypetModel.tamaño" Width="1.5" PointX="3" PointY="10" IsExpanded="true" />
-        <EntityTypeShape EntityType="mypetModel.tipo_usuario" Width="1.5" PointX="0.75" PointY="13" IsExpanded="true" />
-        <AssociationConnector Association="mypetModel.FK__cliente__id_ciud__1BFD2C07" ManuallyRouted="false" />
-        <AssociationConnector Association="mypetModel.FK__cliente__id_dist__1CF15040" ManuallyRouted="false" />
-        <AssociationConnector Association="mypetModel.FK__cliente__id_pais__1B0907CE" ManuallyRouted="false" />
-        <AssociationConnector Association="mypetModel.FK__cliente__id_sexo__1A14E395" ManuallyRouted="false" />
-        <AssociationConnector Association="mypetModel.FK__cliente__tipo_us__1DE57479" ManuallyRouted="false" />
-        <AssociationConnector Association="mypetModel.FK__mascota__id_clie__267ABA7A" ManuallyRouted="false" />
-        <AssociationConnector Association="mypetModel.FK__mascota__id_raza__24927208" ManuallyRouted="false" />
-        <AssociationConnector Association="mypetModel.FK__mascota__id_tama__25869641" ManuallyRouted="false" />
+      <Diagram DiagramId="d9fc96bdcba34bba836df627f13cc0ab" Name="Diagrama1">
+        <EntityTypeShape EntityType="mypetModel.boleta" Width="1.5" PointX="7.5" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="mypetModel.cita" Width="1.5" PointX="10.5" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="mypetModel.cliente" Width="1.5" PointX="5.25" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="mypetModel.detalle_boleta" Width="1.5" PointX="9.75" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="mypetModel.especialidad" Width="1.5" PointX="6" PointY="14.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="mypetModel.especie" Width="1.5" PointX="5.25" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="mypetModel.estado" Width="1.5" PointX="0.75" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="mypetModel.historia_clinica" Width="1.5" PointX="9.75" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="mypetModel.mascota" Width="1.5" PointX="7.5" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="mypetModel.medico" Width="1.5" PointX="8.25" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="mypetModel.producto" Width="1.5" PointX="7.5" PointY="17.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="mypetModel.raza" Width="1.5" PointX="5.25" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="mypetModel.sexo" Width="1.5" PointX="3" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="mypetModel.tabla_postal" Width="1.5" PointX="3" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="mypetModel.tipo_usuario" Width="1.5" PointX="0.75" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="mypetModel.usuario" Width="1.5" PointX="3" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="mypetModel.variables" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="mypetModel.FK__boleta__DNI__2C3393D0" ManuallyRouted="false" />
+        <AssociationConnector Association="mypetModel.FK__detalle_b__NUMER__2F10007B" ManuallyRouted="false" />
+        <AssociationConnector Association="mypetModel.FK__cita__3E52440B" ManuallyRouted="false" />
+        <AssociationConnector Association="mypetModel.FK__cita__CODIGO_MED__3D5E1FD2" ManuallyRouted="false" />
+        <AssociationConnector Association="mypetModel.FK__cita__DNI_CLIENT__3F466844" ManuallyRouted="false" />
+        <AssociationConnector Association="mypetModel.FK__cliente__CODIGO___1BFD2C07" ManuallyRouted="false" />
+        <AssociationConnector Association="mypetModel.FK__cliente__DNI__1DE57479" ManuallyRouted="false" />
+        <AssociationConnector Association="mypetModel.FK__cliente__ID_SEXO__1CF15040" ManuallyRouted="false" />
+        <AssociationConnector Association="mypetModel.FK__mascota__DNI__276EDEB3" ManuallyRouted="false" />
+        <AssociationConnector Association="mypetModel.FK__detalle_b__CODIG__300424B4" ManuallyRouted="false" />
+        <AssociationConnector Association="mypetModel.FK__medico__ID_ESPEC__34C8D9D1" ManuallyRouted="false" />
+        <AssociationConnector Association="mypetModel.FK__mascota__ID_ESPE__25869641" ManuallyRouted="false" />
+        <AssociationConnector Association="mypetModel.FK__raza__ID_ESPECIE__22AA2996" ManuallyRouted="false" />
+        <AssociationConnector Association="mypetModel.FK__usuario__ESTADO__182C9B23" ManuallyRouted="false" />
+        <AssociationConnector Association="mypetModel.FK__historia_clinica__3A81B327" ManuallyRouted="false" />
+        <AssociationConnector Association="mypetModel.FK__mascota__267ABA7A" ManuallyRouted="false" />
+        <AssociationConnector Association="mypetModel.FK__medico__CODIGO__35BCFE0A" ManuallyRouted="false" />
+        <AssociationConnector Association="mypetModel.FK__usuario__TIPO_US__1920BF5C" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

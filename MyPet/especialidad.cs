@@ -12,16 +12,16 @@ namespace MyPet
     using System;
     using System.Collections.Generic;
     
-    public partial class sexo
+    public partial class especialidad
     {
-        public sexo()
+        public especialidad()
         {
-            this.cliente = new HashSet<cliente>();
+            this.medico = new HashSet<medico>();
         }
     
         public int ID { get; set; }
         public string DESCRIPCION { get; set; }
     
-        public virtual ICollection<cliente> cliente { get; set; }
+        public virtual ICollection<medico> medico { get; set; }
     }
 }

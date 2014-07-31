@@ -12,16 +12,18 @@ namespace MyPet
     using System;
     using System.Collections.Generic;
     
-    public partial class distrito
+    public partial class cita
     {
-        public distrito()
-        {
-            this.cliente = new HashSet<cliente>();
-        }
+        public int ID { get; set; }
+        public string CODIGO_MEDICO { get; set; }
+        public string DNI_CLIENTE { get; set; }
+        public Nullable<int> ID_MASCOTA { get; set; }
+        public Nullable<System.DateTime> FECHA { get; set; }
+        public string HORA { get; set; }
+        public string ESTADO { get; set; }
     
-        public string id_distrito { get; set; }
-        public string descripcion_dist { get; set; }
-    
-        public virtual ICollection<cliente> cliente { get; set; }
+        public virtual mascota mascota { get; set; }
+        public virtual medico medico { get; set; }
+        public virtual cliente cliente { get; set; }
     }
 }

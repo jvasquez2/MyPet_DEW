@@ -12,16 +12,10 @@ namespace MyPet
     using System;
     using System.Collections.Generic;
     
-    public partial class tamaño
+    public partial class variables
     {
-        public tamaño()
-        {
-            this.mascota = new HashSet<mascota>();
-        }
-    
-        public string id_tamaño { get; set; }
-        public string descripcion_tamaño { get; set; }
-    
-        public virtual ICollection<mascota> mascota { get; set; }
+        public int ID { get; set; }
+        public string RAZON_SOCIAL { get; set; }
+        public Nullable<decimal> PORCENTAJE_IGV { get; set; }
     }
 }

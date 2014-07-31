@@ -5,7 +5,9 @@ using System.Web;
 
 namespace MyPet.Models
 {
-    public class Productos
+    public class Sexo
     {
+        public int id { get; set; }
+        public string descripcion { get; set; }
     }
 }
