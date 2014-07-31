@@ -407,6 +407,7 @@
     <Content Include="Views\Index\Productos.cshtml" />
     <Content Include="Views\Index\Inicio.cshtml" />
     <Content Include="Views\Usuario\RegistrarUsuario.cshtml" />
+    <Content Include="Views\Mascota\RegistrarMascota.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
