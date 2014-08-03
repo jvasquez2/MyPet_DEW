@@ -13,10 +13,10 @@ namespace MyPet
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class mypetEntities1 : DbContext
+    public partial class mypetEntities : DbContext
     {
-        public mypetEntities1()
-            : base("name=mypetEntities1")
+        public mypetEntities()
+            : base("name=mypetEntities")
         {
         }
     

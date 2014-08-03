@@ -17,11 +17,13 @@ namespace MyPet
         public sexo()
         {
             this.cliente = new HashSet<cliente>();
+            this.usuario = new HashSet<usuario>();
         }
     
         public int ID { get; set; }
         public string DESCRIPCION { get; set; }
     
         public virtual ICollection<cliente> cliente { get; set; }
+        public virtual ICollection<usuario> usuario { get; set; }
     }
 }

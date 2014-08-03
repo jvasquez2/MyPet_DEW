@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="mypetModelStoreContainer" CdmEntityContainer="mypetEntities1">
+  <EntityContainerMapping StorageEntityContainer="mypetModelStoreContainer" CdmEntityContainer="mypetEntities">
     <EntitySetMapping Name="boleta">
       <EntityTypeMapping TypeName="mypetModel.boleta">
         <MappingFragment StoreEntitySet="boleta">
@@ -108,7 +108,7 @@
     <EntitySetMapping Name="medico">
       <EntityTypeMapping TypeName="mypetModel.medico">
         <MappingFragment StoreEntitySet="medico">
-          <ScalarProperty Name="CODIGO" ColumnName="CODIGO" />
+          <ScalarProperty Name="DNI" ColumnName="DNI" />
           <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
           <ScalarProperty Name="APELLIDO_PATERNO" ColumnName="APELLIDO_PATERNO" />
           <ScalarProperty Name="APELLIDO_MATERNO" ColumnName="APELLIDO_MATERNO" />
@@ -164,7 +164,7 @@
     <EntitySetMapping Name="usuario">
       <EntityTypeMapping TypeName="mypetModel.usuario">
         <MappingFragment StoreEntitySet="usuario">
-          <ScalarProperty Name="CODIGO" ColumnName="CODIGO" />
+          <ScalarProperty Name="DNI" ColumnName="DNI" />
           <ScalarProperty Name="CONTRASENA" ColumnName="CONTRASENA" />
           <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
           <ScalarProperty Name="APELLIDO_PATERNO" ColumnName="APELLIDO_PATERNO" />
@@ -173,6 +173,9 @@
           <ScalarProperty Name="FECHA_INGRESO" ColumnName="FECHA_INGRESO" />
           <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
           <ScalarProperty Name="TIPO_USUARIOS" ColumnName="TIPO_USUARIOS" />
+          <ScalarProperty Name="TELEFONO" ColumnName="TELEFONO" />
+          <ScalarProperty Name="ID_SEXO" ColumnName="ID_SEXO" />
+          <ScalarProperty Name="CODIGO_POSTAL" ColumnName="CODIGO_POSTAL" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

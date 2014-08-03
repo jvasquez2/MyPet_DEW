@@ -1,4 +1,4 @@
-﻿@model MyPet.Models.Cliente
+﻿@model MyPet.Models.Usuario
 @{
     ViewBag.Title = "RegistroCliente";
 
@@ -48,10 +48,22 @@
 						<label>* DNI:	</label>
 					</div>
 				<td>
-                    <div class="inputt" style="width: 229px;">@Html.EditorFor(Model => Model.dni)</div>	
+                    <div class="inputt" style="width: 229px;">@Html.EditorFor(Model => Model.DNI)</div>	
                     <br>
 				</td>
 			</tr>
+
+            <tr>
+			<td style="width: 74px; ">
+				<td><div class="milabel">
+						<label>* Contraseña:	</label>
+					</div>
+				<td>
+                    <div class="inputt" style="width: 229px;">@Html.PasswordFor(Model => Model.CONTRASENA)</div>	
+                    <br>
+				</td>
+			</tr>
+
 			<tr>
 			<td style="width: 37px; height: 94px">
 				<td style="width: 140px; ">
@@ -60,7 +72,7 @@
 					</div>
 			
 				<td style="width: 180px; ">
-                    <div class="inputt" style="width: 229px;">@Html.EditorFor(Model=>Model.nombre)</div>	
+                    <div class="inputt" style="width: 229px;">@Html.EditorFor(Model=>Model.NOMBRE)</div>	
                     	<br>
 				</td>
 				<td style="width: 10px; ">
@@ -71,7 +83,7 @@
 					</div>
 				</td>
 				<td>
-                    <div class="inputt" style="width: 229px;">@Html.EditorFor(Model=>Model.apellido_paterno)</div>	
+                    <div class="inputt" style="width: 229px;">@Html.EditorFor(Model=>Model.APELLIDO_PATERNO)</div>	
                     <br>
 				</td>
 			</tr>
@@ -81,7 +93,7 @@
 						<label>*Apellido Materno:	</label>
 					</div>
 				<td>
-                    <div class="inputt" style="width: 229px;">@Html.EditorFor(Model=>Model.apelido_materno)</div>	
+                    <div class="inputt" style="width: 229px;">@Html.EditorFor(Model=>Model.APELLIDO_MATERNO)</div>	
                     <br>
 				</td>
 			</tr>
@@ -93,7 +105,7 @@
 						<label>* Correo electrónico:	</label>
 					</div>
 				<td style="width: 281px; ">
-                    <div class="inputt" style="width: 229px;">@Html.EditorFor(Model=>Model.email)</div>	
+                    <div class="inputt" style="width: 229px;">@Html.EditorFor(Model=>Model.EMAIL)</div>	
                     	<br>
 				</td>
 			</tr>
@@ -104,7 +116,7 @@
 						<label>* Direccion:	</label>
 					</div>
 				<td>
-                    <div class="inputt" style="width: 229px;">@Html.EditorFor(Model=>Model.direccion)</div>	
+                    <div class="inputt" style="width: 229px;">@Html.EditorFor(Model=>Model.DIRECCION)</div>	
                      	<br>
 				</td>
 			</tr>
@@ -115,7 +127,7 @@
 						<label>* Distrito:	</label>
 					</div>
 				<td>
-                    <div class="inputt" style="width: 229px;">@Html.DropDownListFor(Model=>Model.codigo_postal, tablapostal, "(Seleccione distrito)")</div>	
+                    <div class="inputt" style="width: 229px;">@Html.DropDownListFor(Model=>Model.CODIGO_POSTAL, tablapostal, "(Seleccione distrito)")</div>	
                      	<br>
 				</td>
 			</tr>
@@ -126,7 +138,7 @@
 						<label>* Sexo:	</label>
 					</div>
 				<td>
-                    <div class="inputt" style="width: 229px;">@Html.DropDownListFor(Model=>Model.id_sexo, sexo, "(Seleccione sexo)")</div>	
+                    <div class="inputt" style="width: 229px;">@Html.DropDownListFor(Model=>Model.ID_SEXO, sexo, "(Seleccione sexo)")</div>	
                     
 				</td>
 			</tr><br>
@@ -139,7 +151,7 @@
 						<label>* Telefono:	</label>
 					</div>
 				<td>
-                    <div class="inputt" style="width: 229px;">@Html.EditorFor(Model=>Model.telefono)</div>	
+                    <div class="inputt" style="width: 229px;">@Html.EditorFor(Model=>Model.TELEFONO)</div>	
                     	<br>
 				</td>
 			</tr>
