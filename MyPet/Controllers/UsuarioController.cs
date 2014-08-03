@@ -8,7 +8,7 @@ namespace MyPet.Controllers
 {
     public class UsuarioController : Controller
     {
-        mypetEntities1 mp = new mypetEntities1();
+        mypetEntities mp = new mypetEntities();
         //
         // GET: /Usuario/
 
@@ -49,11 +49,11 @@ namespace MyPet.Controllers
             try
             {
                 usuario usu = new usuario();
-                usu.CODIGO = reg.CODIGO;
+                usu.DNI = reg.DNI;
                 usu.CONTRASENA = reg.CONTRASENA;
                 usu.NOMBRE = reg.NOMBRE;
                 usu.APELLIDO_PATERNO = reg.APELLIDO_PATERNO;
-                usu.APELLIDO_MATERNO = reg.APELIDO_MATERNO;
+                usu.APELLIDO_MATERNO = reg.APELLIDO_MATERNO;
                 usu.EMAIL = reg.EMAIL;
                 usu.FECHA_INGRESO = reg.FECHA_INGRESO;
                 usu.ESTADO = reg.ESTADO;

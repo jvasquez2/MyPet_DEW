@@ -19,7 +19,7 @@ namespace MyPet
             this.cita = new HashSet<cita>();
         }
     
-        public string CODIGO { get; set; }
+        public string DNI { get; set; }
         public string NOMBRE { get; set; }
         public string APELLIDO_PATERNO { get; set; }
         public string APELLIDO_MATERNO { get; set; }

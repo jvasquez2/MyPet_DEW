@@ -17,11 +17,13 @@ namespace MyPet
         public tabla_postal()
         {
             this.cliente = new HashSet<cliente>();
+            this.usuario = new HashSet<usuario>();
         }
     
         public string CODIGO { get; set; }
         public string DESCRIPCION { get; set; }
     
         public virtual ICollection<cliente> cliente { get; set; }
+        public virtual ICollection<usuario> usuario { get; set; }
     }
 }

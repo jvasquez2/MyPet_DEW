@@ -14,19 +14,25 @@ namespace MyPet
     
     public partial class usuario
     {
-        public string CODIGO { get; set; }
+        public string DNI { get; set; }
         public string CONTRASENA { get; set; }
         public string NOMBRE { get; set; }
         public string APELLIDO_PATERNO { get; set; }
         public string APELLIDO_MATERNO { get; set; }
+        public string DIRECCION { get; set; }
         public string EMAIL { get; set; }
         public Nullable<System.DateTime> FECHA_INGRESO { get; set; }
         public Nullable<int> ESTADO { get; set; }
         public Nullable<int> TIPO_USUARIOS { get; set; }
+        public string TELEFONO { get; set; }
+        public Nullable<int> ID_SEXO { get; set; }
+        public string CODIGO_POSTAL { get; set; }
     
         public virtual cliente cliente { get; set; }
         public virtual estado estado1 { get; set; }
         public virtual medico medico { get; set; }
+        public virtual sexo sexo { get; set; }
+        public virtual tabla_postal tabla_postal { get; set; }
         public virtual tipo_usuario tipo_usuario { get; set; }
     }
 }
