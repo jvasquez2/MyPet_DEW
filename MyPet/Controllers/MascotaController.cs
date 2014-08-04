@@ -9,7 +9,7 @@ namespace MyPet.Controllers
 {
     public class MascotaController : Controller
     {
-        mypetEntities1 mp = new mypetEntities1();
+        mypetEntities mp = new mypetEntities();
         // GET: /Mascota/
 
         public ActionResult Index()

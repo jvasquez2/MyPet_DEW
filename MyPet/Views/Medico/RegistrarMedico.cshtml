@@ -1,0 +1,35 @@
+﻿@model MyPet.Models.Medico
+@{
+    ViewBag.Title = "RegistrarMedico";
+    SelectList especialidad = (SelectList) ViewBag.especialidad;
+}
+
+<h2>RegistrarMedico</h2>
+@using (Html.BeginForm()) 
+{
+    <fieldset>
+        <div>Codigo:</div>
+        <div>@Html.EditorFor(Model => Model.DNI)</div>
+
+        <div>Contraseña:</div>
+        <div>@Html.EditorFor(Model => Model.NOMBRE)</div>
+
+        <div>Nombre:</div>
+        <div>@Html.EditorFor(Model => Model.APELLIDO_PATERNO)</div>
+
+        <div>Apellido Paterno:</div>
+        <div>@Html.EditorFor(Model => Model.APELIIDO_MATERNO)</div>
+
+        <div>Distrito:</div>
+        <div>@Html.DropDownListFor(Model=>Model.ID_ESPECIALIDAD, especialidad, "(Seleccione)")</div>
+
+        <div>Apellido Materno:</div>
+        <div>@Html.EditorFor(Model => Model.FECHA_NACIMIENTO)</div>
+
+        <div>Distrito:</div>
+
+        <div></div>
+        <div><input type="submit" value="Registrar Medico"/></div>
+    </fieldset>
+}
+@Html.ActionLink("Retornar", "../Login");    

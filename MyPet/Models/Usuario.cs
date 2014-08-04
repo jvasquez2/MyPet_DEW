@@ -17,8 +17,8 @@ namespace MyPet.Models
         public int ESTADO { get; set; }
         public int TIPO_USUARIOS { get; set; }
         public int ID_SEXO { get; set; }
-        public string DIRECCION { get; set; }
         public string TELEFONO { get; set; }
         public string CODIGO_POSTAL { get; set; }
+        public string DIRECCION { get; set; }
     }
 }

@@ -291,6 +291,7 @@
     <Property Name="NOMBRE" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
     <Property Name="APELLIDO_PATERNO" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
     <Property Name="APELLIDO_MATERNO" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="DIRECCION" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
     <Property Name="EMAIL" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
     <Property Name="FECHA_INGRESO" Type="DateTime" Precision="3" />
     <Property Name="ESTADO" Type="Int32" />

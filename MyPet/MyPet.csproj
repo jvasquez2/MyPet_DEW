@@ -152,6 +152,7 @@
     <Compile Include="Controllers\IndexController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\MascotaController.cs" />
+    <Compile Include="Controllers\MedicoController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="detalle_boleta.cs">
       <DependentUpon>mypet.tt</DependentUpon>
@@ -179,6 +180,7 @@
     </Compile>
     <Compile Include="Models\Cliente.cs" />
     <Compile Include="Models\Mascota.cs" />
+    <Compile Include="Models\Medico.cs" />
     <Compile Include="Models\Productos.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="mypet.Context.cs">
@@ -408,6 +410,7 @@
     <Content Include="Views\Index\Inicio.cshtml" />
     <Content Include="Views\Usuario\RegistrarUsuario.cshtml" />
     <Content Include="Views\Mascota\RegistrarMascota.cshtml" />
+    <Content Include="Views\Medico\RegistrarMedico.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
