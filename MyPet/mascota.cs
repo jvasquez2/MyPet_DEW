@@ -14,15 +14,23 @@ namespace MyPet
     
     public partial class mascota
     {
-        public string id_mascota { get; set; }
-        public string nombre_mascota { get; set; }
-        public string fecha_nac { get; set; }
-        public string id_raza { get; set; }
-        public string id_tamaño { get; set; }
-        public string id_cliente { get; set; }
+        public mascota()
+        {
+            this.cita = new HashSet<cita>();
+            this.historia_clinica = new HashSet<historia_clinica>();
+        }
     
+        public string DNI { get; set; }
+        public int ID { get; set; }
+        public string NOMBRE { get; set; }
+        public Nullable<int> ID_ESPECIE { get; set; }
+        public Nullable<int> ID_RAZA { get; set; }
+        public Nullable<System.DateTime> FECHA_NACIMIENTO { get; set; }
+    
+        public virtual ICollection<cita> cita { get; set; }
         public virtual cliente cliente { get; set; }
+        public virtual especie especie { get; set; }
+        public virtual ICollection<historia_clinica> historia_clinica { get; set; }
         public virtual raza raza { get; set; }
-        public virtual tamaño tamaño { get; set; }
     }
 }

@@ -25,14 +25,22 @@ namespace MyPet
             throw new UnintentionalCodeFirstException();
         }
     
-        public DbSet<ciudad> ciudad { get; set; }
+        public DbSet<boleta> boleta { get; set; }
+        public DbSet<cita> cita { get; set; }
         public DbSet<cliente> cliente { get; set; }
-        public DbSet<distrito> distrito { get; set; }
+        public DbSet<detalle_boleta> detalle_boleta { get; set; }
+        public DbSet<especialidad> especialidad { get; set; }
+        public DbSet<especie> especie { get; set; }
+        public DbSet<estado> estado { get; set; }
+        public DbSet<historia_clinica> historia_clinica { get; set; }
         public DbSet<mascota> mascota { get; set; }
-        public DbSet<pais> pais { get; set; }
+        public DbSet<medico> medico { get; set; }
+        public DbSet<producto> producto { get; set; }
         public DbSet<raza> raza { get; set; }
         public DbSet<sexo> sexo { get; set; }
-        public DbSet<tamaño> tamaño { get; set; }
+        public DbSet<tabla_postal> tabla_postal { get; set; }
         public DbSet<tipo_usuario> tipo_usuario { get; set; }
+        public DbSet<usuario> usuario { get; set; }
+        public DbSet<variables> variables { get; set; }
     }
 }

@@ -1,0 +1,59 @@
+﻿@model MyPet.Models.Usuario
+
+@{
+    ViewBag.Title = "RegistrarUsuario";
+    SelectList estado = (SelectList) ViewBag.estado;
+    SelectList tipousuario = (SelectList) ViewBag.tipousuario;
+    SelectList sexo = (SelectList)ViewBag.sexo;
+    SelectList tablapostal = (SelectList)ViewBag.tablapostal;
+    
+}
+
+<h2>RegistrarUsuario</h2>
+@using (Html.BeginForm()) 
+{
+    <fieldset>
+        <div>Codigo:</div>
+        <div>@Html.EditorFor(Model => Model.DNI)</div>
+
+        <div>Contraseña:</div>
+        <div>@Html.EditorFor(Model => Model.CONTRASENA)</div>
+
+        <div>Nombre:</div>
+        <div>@Html.EditorFor(Model => Model.NOMBRE)</div>
+
+        <div>Apellido Paterno:</div>
+        <div>@Html.EditorFor(Model => Model.APELLIDO_PATERNO)</div>
+
+        <div>Apellido Materno:</div>
+        <div>@Html.EditorFor(Model => Model.APELLIDO_MATERNO)</div>
+
+        <div>Email:</div>
+        <div>@Html.EditorFor(Model => Model.EMAIL)</div>
+
+        <div>Fecha Ingreso:</div>
+        <div>@Html.EditorFor(Model => Model.FECHA_INGRESO)</div>
+
+        <div>Estado:</div>
+        <div>@Html.DropDownListFor(Model=>Model.ESTADO, estado, "(Seleccione)")</div>
+
+        <div>Tipo de Usuario:</div>
+        <div>@Html.DropDownListFor(Model=>Model.TIPO_USUARIOS, tipousuario, "(Seleccione)")</div>
+
+        <div>Sexo:</div>
+        <div>@Html.DropDownListFor(Model=>Model.ID_SEXO, sexo, "(Seleccione)")</div>
+
+        <div>Telefono:</div>
+        <div>@Html.EditorFor(Model => Model.TELEFONO)</div>
+
+        <div>Distrito:</div>
+        <div>@Html.DropDownListFor(Model=>Model.CODIGO_POSTAL, tablapostal, "(Seleccione)")</div>
+
+        <div>Direccion:</div>
+        <div>@Html.EditorFor(Model => Model.DIRECCION)</div>
+
+        <div></div>
+        <div><input type="submit" value="Registrar Usuario"/></div>
+    </fieldset>
+}
+@Html.ActionLink("Retornar", "../Login");

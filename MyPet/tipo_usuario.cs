@@ -16,12 +16,12 @@ namespace MyPet
     {
         public tipo_usuario()
         {
-            this.cliente = new HashSet<cliente>();
+            this.usuario = new HashSet<usuario>();
         }
     
-        public string tipo_usuario1 { get; set; }
-        public string descrip_usuario { get; set; }
+        public int ID { get; set; }
+        public string DESCRIPCION { get; set; }
     
-        public virtual ICollection<cliente> cliente { get; set; }
+        public virtual ICollection<usuario> usuario { get; set; }
     }
 }

@@ -1,92 +1,191 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="mypetModelStoreContainer" CdmEntityContainer="mypetEntities">
-    <EntitySetMapping Name="ciudad">
-      <EntityTypeMapping TypeName="mypetModel.ciudad">
-        <MappingFragment StoreEntitySet="ciudad">
-          <ScalarProperty Name="id_ciudad" ColumnName="id_ciudad" />
-          <ScalarProperty Name="descripcion_ciu" ColumnName="descripcion_ciu" />
+    <EntitySetMapping Name="boleta">
+      <EntityTypeMapping TypeName="mypetModel.boleta">
+        <MappingFragment StoreEntitySet="boleta">
+          <ScalarProperty Name="NUMERO" ColumnName="NUMERO" />
+          <ScalarProperty Name="DNI" ColumnName="DNI" />
+          <ScalarProperty Name="RAZON_SOCIAL" ColumnName="RAZON_SOCIAL" />
+          <ScalarProperty Name="BRUTOS" ColumnName="BRUTOS" />
+          <ScalarProperty Name="DESCUENTO" ColumnName="DESCUENTO" />
+          <ScalarProperty Name="IGV" ColumnName="IGV" />
+          <ScalarProperty Name="VALOR_VENTA" ColumnName="VALOR_VENTA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="cita">
+      <EntityTypeMapping TypeName="mypetModel.cita">
+        <MappingFragment StoreEntitySet="cita">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CODIGO_MEDICO" ColumnName="CODIGO_MEDICO" />
+          <ScalarProperty Name="DNI_CLIENTE" ColumnName="DNI_CLIENTE" />
+          <ScalarProperty Name="ID_MASCOTA" ColumnName="ID_MASCOTA" />
+          <ScalarProperty Name="FECHA" ColumnName="FECHA" />
+          <ScalarProperty Name="HORA" ColumnName="HORA" />
+          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="cliente">
       <EntityTypeMapping TypeName="mypetModel.cliente">
         <MappingFragment StoreEntitySet="cliente">
-          <ScalarProperty Name="id_cliente" ColumnName="id_cliente" />
-          <ScalarProperty Name="email" ColumnName="email" />
-          <ScalarProperty Name="contrasena" ColumnName="contrasena" />
-          <ScalarProperty Name="nombre" ColumnName="nombre" />
-          <ScalarProperty Name="apellidoPat" ColumnName="apellidoPat" />
-          <ScalarProperty Name="apellidoMat" ColumnName="apellidoMat" />
-          <ScalarProperty Name="dni" ColumnName="dni" />
-          <ScalarProperty Name="id_sexo" ColumnName="id_sexo" />
-          <ScalarProperty Name="id_pais" ColumnName="id_pais" />
-          <ScalarProperty Name="id_ciudad" ColumnName="id_ciudad" />
-          <ScalarProperty Name="id_distrito" ColumnName="id_distrito" />
-          <ScalarProperty Name="direccion" ColumnName="direccion" />
-          <ScalarProperty Name="referencia_direccion" ColumnName="referencia_direccion" />
-          <ScalarProperty Name="telefono" ColumnName="telefono" />
-          <ScalarProperty Name="tipo_usuario" ColumnName="tipo_usuario" />
+          <ScalarProperty Name="DNI" ColumnName="DNI" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="APELLIDO_PATERNO" ColumnName="APELLIDO_PATERNO" />
+          <ScalarProperty Name="APELLIDO_MATERNO" ColumnName="APELLIDO_MATERNO" />
+          <ScalarProperty Name="DIRECCION" ColumnName="DIRECCION" />
+          <ScalarProperty Name="CODIGO_POSTAL" ColumnName="CODIGO_POSTAL" />
+          <ScalarProperty Name="ID_SEXO" ColumnName="ID_SEXO" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="TELEFONO" ColumnName="TELEFONO" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="distrito">
-      <EntityTypeMapping TypeName="mypetModel.distrito">
-        <MappingFragment StoreEntitySet="distrito">
-          <ScalarProperty Name="id_distrito" ColumnName="id_distrito" />
-          <ScalarProperty Name="descripcion_dist" ColumnName="descripcion_dist" />
+    <EntitySetMapping Name="detalle_boleta">
+      <EntityTypeMapping TypeName="mypetModel.detalle_boleta">
+        <MappingFragment StoreEntitySet="detalle_boleta">
+          <ScalarProperty Name="NUMERO" ColumnName="NUMERO" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CODIGO" ColumnName="CODIGO" />
+          <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+          <ScalarProperty Name="CANTIDAD" ColumnName="CANTIDAD" />
+          <ScalarProperty Name="BRUTO" ColumnName="BRUTO" />
+          <ScalarProperty Name="DESCUENTO" ColumnName="DESCUENTO" />
+          <ScalarProperty Name="IGV" ColumnName="IGV" />
+          <ScalarProperty Name="VALOR_VENTA" ColumnName="VALOR_VENTA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="especialidad">
+      <EntityTypeMapping TypeName="mypetModel.especialidad">
+        <MappingFragment StoreEntitySet="especialidad">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="especie">
+      <EntityTypeMapping TypeName="mypetModel.especie">
+        <MappingFragment StoreEntitySet="especie">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="estado">
+      <EntityTypeMapping TypeName="mypetModel.estado">
+        <MappingFragment StoreEntitySet="estado">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="historia_clinica">
+      <EntityTypeMapping TypeName="mypetModel.historia_clinica">
+        <MappingFragment StoreEntitySet="historia_clinica">
+          <ScalarProperty Name="DNI_CLIENTE" ColumnName="DNI_CLIENTE" />
+          <ScalarProperty Name="ID_MASCOTA" ColumnName="ID_MASCOTA" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CITA" ColumnName="CITA" />
+          <ScalarProperty Name="RECETA" ColumnName="RECETA" />
+          <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="mascota">
       <EntityTypeMapping TypeName="mypetModel.mascota">
         <MappingFragment StoreEntitySet="mascota">
-          <ScalarProperty Name="id_mascota" ColumnName="id_mascota" />
-          <ScalarProperty Name="nombre_mascota" ColumnName="nombre_mascota" />
-          <ScalarProperty Name="fecha_nac" ColumnName="fecha_nac" />
-          <ScalarProperty Name="id_raza" ColumnName="id_raza" />
-          <ScalarProperty Name="id_tamaño" ColumnName="id_tamaño" />
-          <ScalarProperty Name="id_cliente" ColumnName="id_cliente" />
+          <ScalarProperty Name="DNI" ColumnName="DNI" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="ID_ESPECIE" ColumnName="ID_ESPECIE" />
+          <ScalarProperty Name="ID_RAZA" ColumnName="ID_RAZA" />
+          <ScalarProperty Name="FECHA_NACIMIENTO" ColumnName="FECHA_NACIMIENTO" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="pais">
-      <EntityTypeMapping TypeName="mypetModel.pais">
-        <MappingFragment StoreEntitySet="pais">
-          <ScalarProperty Name="id_pais" ColumnName="id_pais" />
-          <ScalarProperty Name="descrip_pais" ColumnName="descrip_pais" />
+    <EntitySetMapping Name="medico">
+      <EntityTypeMapping TypeName="mypetModel.medico">
+        <MappingFragment StoreEntitySet="medico">
+          <ScalarProperty Name="DNI" ColumnName="DNI" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="APELLIDO_PATERNO" ColumnName="APELLIDO_PATERNO" />
+          <ScalarProperty Name="APELLIDO_MATERNO" ColumnName="APELLIDO_MATERNO" />
+          <ScalarProperty Name="ID_ESPECIALIDAD" ColumnName="ID_ESPECIALIDAD" />
+          <ScalarProperty Name="FECHA_NACIMIENTO" ColumnName="FECHA_NACIMIENTO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="producto">
+      <EntityTypeMapping TypeName="mypetModel.producto">
+        <MappingFragment StoreEntitySet="producto">
+          <ScalarProperty Name="CODIGO" ColumnName="CODIGO" />
+          <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+          <ScalarProperty Name="STOCK_ACTUAL" ColumnName="STOCK_ACTUAL" />
+          <ScalarProperty Name="STOCK_DISPONIBLE" ColumnName="STOCK_DISPONIBLE" />
+          <ScalarProperty Name="PRECIO" ColumnName="PRECIO" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="raza">
       <EntityTypeMapping TypeName="mypetModel.raza">
         <MappingFragment StoreEntitySet="raza">
-          <ScalarProperty Name="id_raza" ColumnName="id_raza" />
-          <ScalarProperty Name="descripcion_raza" ColumnName="descripcion_raza" />
+          <ScalarProperty Name="ID_ESPECIE" ColumnName="ID_ESPECIE" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="sexo">
       <EntityTypeMapping TypeName="mypetModel.sexo">
         <MappingFragment StoreEntitySet="sexo">
-          <ScalarProperty Name="id_sexo" ColumnName="id_sexo" />
-          <ScalarProperty Name="descrip_sexo" ColumnName="descrip_sexo" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="tamaño">
-      <EntityTypeMapping TypeName="mypetModel.tamaño">
-        <MappingFragment StoreEntitySet="tamaño">
-          <ScalarProperty Name="id_tamaño" ColumnName="id_tamaño" />
-          <ScalarProperty Name="descripcion_tamaño" ColumnName="descripcion_tamaño" />
+    <EntitySetMapping Name="tabla_postal">
+      <EntityTypeMapping TypeName="mypetModel.tabla_postal">
+        <MappingFragment StoreEntitySet="tabla_postal">
+          <ScalarProperty Name="CODIGO" ColumnName="CODIGO" />
+          <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tipo_usuario">
       <EntityTypeMapping TypeName="mypetModel.tipo_usuario">
         <MappingFragment StoreEntitySet="tipo_usuario">
-          <ScalarProperty Name="tipo_usuario1" ColumnName="tipo_usuario" />
-          <ScalarProperty Name="descrip_usuario" ColumnName="descrip_usuario" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="usuario">
+      <EntityTypeMapping TypeName="mypetModel.usuario">
+        <MappingFragment StoreEntitySet="usuario">
+          <ScalarProperty Name="DNI" ColumnName="DNI" />
+          <ScalarProperty Name="CONTRASENA" ColumnName="CONTRASENA" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="APELLIDO_PATERNO" ColumnName="APELLIDO_PATERNO" />
+          <ScalarProperty Name="APELLIDO_MATERNO" ColumnName="APELLIDO_MATERNO" />
+          <ScalarProperty Name="DIRECCION" ColumnName="DIRECCION" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="FECHA_INGRESO" ColumnName="FECHA_INGRESO" />
+          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+          <ScalarProperty Name="TIPO_USUARIOS" ColumnName="TIPO_USUARIOS" />
+          <ScalarProperty Name="TELEFONO" ColumnName="TELEFONO" />
+          <ScalarProperty Name="ID_SEXO" ColumnName="ID_SEXO" />
+          <ScalarProperty Name="CODIGO_POSTAL" ColumnName="CODIGO_POSTAL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="variables">
+      <EntityTypeMapping TypeName="mypetModel.variables">
+        <MappingFragment StoreEntitySet="variables">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="RAZON_SOCIAL" ColumnName="RAZON_SOCIAL" />
+          <ScalarProperty Name="PORCENTAJE_IGV" ColumnName="PORCENTAJE_IGV" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

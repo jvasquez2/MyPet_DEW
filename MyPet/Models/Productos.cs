@@ -7,12 +7,10 @@ namespace MyPet.Models
 {
     public class Productos
     {
-        public int id_prod { get; set; }
-        public string nombre_prod { get; set; }
-        public string descripcion { get; set; }
-        public string peso { get; set; }
-        public string precio { get; set; }
-        public string dimensiones { get; set; }
-
+        public string CODIGO { get; set; }
+        public string DESCRIPCION { get; set; }
+        public int STOCK_ACTUAL { get; set; }
+        public int STOCK_DISPONIBLE { get; set; }
+        public decimal PRECIO { get; set; }
     }
 }

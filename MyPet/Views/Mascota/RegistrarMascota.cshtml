@@ -1,0 +1,35 @@
+﻿@model MyPet.Models.Mascota
+@{
+    ViewBag.Title = "RegistrarMascota";
+}
+
+<h2>RegistrarMascota</h2>
+@using (Html.BeginForm()) 
+{
+    <fieldset>
+        <div>DNI del propietario:</div>
+        <div>@Html.EditorFor(m => m.dni)</div>
+
+        <div>Id Mascota:</div>
+        <div>@Html.EditorFor(m => m.id)</div>
+
+        <div>Nombre:</div>
+        <div>@Html.EditorFor(m => m.nombre)</div>
+
+        <div>Especie:</div>
+        <div>@Html.DropDownListFor(m=>m.id_especie, new SelectList(Model.especie,"ID","DESCRIPCION"))</div>
+
+        @if (Model.id_especie != 0)
+        {
+        <div>Raza:</div>
+        <div>@Html.DropDownListFor(m=>m.id_raza, new SelectList(Model.raza,"ID","DESCRIPCION"))</div>
+        }
+        
+        <div>Fecha de Nacimiento</div>
+        <div>@Html.EditorFor(m => m.fecha_nacimiento)</div>
+
+        <div></div>
+        <div><input type="submit" value="Registrar Mascota"/></div>
+    </fieldset>
+}
+@Html.ActionLink("Retornar", "../Login");

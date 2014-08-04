@@ -22,61 +22,61 @@ namespace MyPet.Controllers
             return lista.ToList();
         }
 
-        public List<pais> Pais()
+        public List<tabla_postal> TablaPostal()
         {
-            var lista = from p in mp.pais select p;
+            var lista = from p in mp.tabla_postal select p;
             return lista.ToList();
         }
 
-        public List<ciudad> Ciudad()
-        {
-            var lista = from p in mp.ciudad select p;
-            return lista.ToList();
-        }
-
-        public List<distrito> Distrito()
-        {
-            var lista = from p in mp.distrito select p;
-            return lista.ToList();
-        }
-
+     
         public ActionResult RegistroCliente()
         {
-            ViewBag.sexo = new SelectList(Sexo(), "id_sexo", "descrip_sexo");
-            ViewBag.pais = new SelectList(Pais(), "id_pais", "descrip_pais");
-            ViewBag.ciudad = new SelectList(Ciudad(), "id_ciudad", "descripcion_ciu");
-            ViewBag.distrito = new SelectList(Distrito(), "id_distrito", "descripcion_dist");
+            ViewBag.sexo = new SelectList(Sexo(), "ID", "DESCRIPCION");
+            ViewBag.tablapostal = new SelectList(TablaPostal(), "CODIGO", "DESCRIPCION");
             return View();
         }
 
         [HttpPost]
-        public ActionResult RegistroCliente(Cliente reg)
+        public ActionResult RegistroCliente(Usuario reg)
         {
             if (!ModelState.IsValid)
             {
-                ViewBag.sexo = new SelectList(Sexo(), "id_sexo", "descrip_sexo");
-                ViewBag.pais = new SelectList(Pais(), "id_pais", "descrip_pais");
-                ViewBag.ciudad = new SelectList(Ciudad(), "id_ciudad", "descripcion_ciu");
-                ViewBag.distrito = new SelectList(Distrito(), "id_distrito", "descripcion_dist");
+                ViewBag.sexo = new SelectList(Sexo(), "ID", "DESCRIPCION", reg.ID_SEXO);
+                ViewBag.tablapostal = new SelectList(TablaPostal(), "CODIGO", "DESCRIPCION", reg.CODIGO_POSTAL);
                 return View();
             }
             try
             {
+                DateTime Hoy = DateTime.Today;
                 cliente cli = new cliente();
-                cli.email = reg.nombre;
-                cli.contrasena = reg.apellido_paterno;
-                cli.nombre = reg.apellido_materno;
-                cli.apellidoPat = reg.apellido_paterno;
-                cli.apellidoMat = reg.apellido_materno;
-                cli.dni = reg.dni;
-                cli.id_sexo = reg.id_sexo;
-                cli.id_pais = reg.id_pais;
-                cli.id_ciudad = reg.id_ciudad;
-                cli.id_distrito = reg.id_distrito;
-                cli.direccion = reg.direccion;
-                cli.referencia_direccion = reg.referencia_direccion;
-                cli.telefono = reg.telefono;
-                cli.tipo_usuario = "2";
+                usuario usu = new usuario();
+
+                usu.DNI = reg.DNI;
+                usu.CONTRASENA = reg.CONTRASENA;
+                usu.NOMBRE = reg.NOMBRE;
+                usu.APELLIDO_PATERNO = reg.APELLIDO_PATERNO;
+                usu.APELLIDO_MATERNO = reg.APELLIDO_MATERNO;
+                usu.DIRECCION = reg.DIRECCION;
+                usu.CODIGO_POSTAL = reg.CODIGO_POSTAL;
+                usu.ID_SEXO = reg.ID_SEXO;
+                usu.EMAIL = reg.EMAIL;
+                usu.TELEFONO = reg.TELEFONO;
+                usu.ESTADO = 1;
+                usu.TIPO_USUARIOS = 1;
+                usu.FECHA_INGRESO = Hoy;
+                mp.usuario.Add(usu);
+                mp.SaveChanges();
+
+
+                cli.DNI= reg.DNI;
+                cli.NOMBRE = reg.NOMBRE;
+                cli.APELLIDO_PATERNO = reg.APELLIDO_PATERNO;
+                cli.APELLIDO_MATERNO = reg.APELLIDO_MATERNO;
+                cli.DIRECCION = reg.DIRECCION;
+                cli.CODIGO_POSTAL = reg.CODIGO_POSTAL;
+                cli.ID_SEXO = reg.ID_SEXO;
+                cli.EMAIL = reg.EMAIL;
+                cli.TELEFONO = reg.TELEFONO;
                 mp.cliente.Add(cli);
                 mp.SaveChanges();
                 return RedirectToAction("../Login");
@@ -84,13 +84,52 @@ namespace MyPet.Controllers
             catch (Exception ex)
             {
                 ModelState.AddModelError("", ex.Message);
-                ViewBag.sexo = new SelectList(Sexo(), "id_sexo", "descrip_sexo");
-                ViewBag.pais = new SelectList(Pais(), "id_pais", "descrip_pais");
-                ViewBag.ciudad = new SelectList(Ciudad(), "id_ciudad", "descripcion_ciu");
-                ViewBag.distrito = new SelectList(Distrito(), "id_distrito", "descripcion_dist");
+                ViewBag.sexo = new SelectList(Sexo(), "ID", "DESCRIPCION", reg.ID_SEXO);
+                ViewBag.tablapostal = new SelectList(TablaPostal(), "CODIGO", "DESCRIPCION", reg.CODIGO_POSTAL);
                 return View();
             }
             
+        }
+
+        public ActionResult ActualizarCliente() 
+        {
+            ViewBag.sexo = new SelectList(Sexo(), "ID", "DESCRIPCION");
+            ViewBag.tablapostal = new SelectList(TablaPostal(), "CODIGO", "DESCRIPCION");
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult ActualizarCliente(Cliente reg) 
+        {
+            if (!ModelState.IsValid)
+            {
+                ViewBag.sexo = new SelectList(Sexo(), "ID", "DESCRIPCION");
+                ViewBag.tablapostal = new SelectList(TablaPostal(), "CODIGO", "DESCRIPCION");
+                return View();
+            }
+            try
+            {
+                cliente cli = mp.cliente.Find(reg.dni);
+                cli.DNI = reg.dni;
+                cli.NOMBRE = reg.nombre;
+                cli.APELLIDO_PATERNO = reg.apellido_paterno;
+                cli.APELLIDO_MATERNO = reg.apelido_materno;
+                cli.DIRECCION = reg.direccion;
+                cli.CODIGO_POSTAL = reg.codigo_postal;
+                cli.ID_SEXO = reg.id_sexo;
+                cli.EMAIL = reg.email;
+                cli.TELEFONO = reg.telefono;
+                mp.SaveChanges();
+                return RedirectToAction("../Login");
+            }
+            catch (Exception ex)
+            {
+                ModelState.AddModelError("", ex.Message);
+                ViewBag.sexo = new SelectList(Sexo(), "ID", "DESCRIPCION");
+                ViewBag.tablapostal = new SelectList(TablaPostal(), "CODIGO", "DESCRIPCION");
+                return View();
+                
+            }
         }
 
     }

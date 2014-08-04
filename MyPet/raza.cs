@@ -19,9 +19,11 @@ namespace MyPet
             this.mascota = new HashSet<mascota>();
         }
     
-        public string id_raza { get; set; }
-        public string descripcion_raza { get; set; }
+        public int ID_ESPECIE { get; set; }
+        public int ID { get; set; }
+        public string DESCRIPCION { get; set; }
     
+        public virtual especie especie { get; set; }
         public virtual ICollection<mascota> mascota { get; set; }
     }
 }
