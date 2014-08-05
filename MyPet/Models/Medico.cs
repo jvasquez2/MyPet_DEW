@@ -7,11 +7,12 @@ namespace MyPet.Models
 {
     public class Medico
     {
-        public String codigo { get; set; }
-        public String nombre { get; set; }
-        public String apellido_paterno { get; set; }
-        public String apellido_materno { get; set; }
-        public int id_especialidad { get; set; }
-        public DateTime fecha_nacimiento { get; set; }
+        public string DNI { get; set; }
+        public string NOMBRE { get; set; }
+        public string APELLIDO_PATERNO { get; set; }
+        public string APELIIDO_MATERNO { get; set; }
+        public int ID_ESPECIALIDAD { get; set; }
+        public DateTime FECHA_NACIMIENTO { get; set; }
+
     }
 }

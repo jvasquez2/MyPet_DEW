@@ -29,10 +29,24 @@ namespace MyPet.Controllers
             return lista.ToList();
         }
 
+        public List<sexo> Sexo()
+        {
+            var lista = from s in mp.sexo select s;
+            return lista.ToList();
+        }
+
+        public List<tabla_postal> Tabla_postal() 
+        {
+            var lista = from tp in mp.tabla_postal select tp;
+            return lista.ToList();
+        }
+
         public ActionResult RegistrarUsuario() 
         {
             ViewBag.estado = new SelectList(Estado(), "ID", "DESCRIPCION");
             ViewBag.tipousuario = new SelectList(TipoUsuario(), "ID", "DESCRIPCION");
+            ViewBag.sexo = new SelectList(Sexo(), "ID", "DESCRIPCION");
+            ViewBag.tablapostal = new SelectList(Tabla_postal(), "CODIGO", "DESCRIPCION");
             return View();
         }
 
@@ -43,6 +57,8 @@ namespace MyPet.Controllers
             {
                 ViewBag.estado = new SelectList(Estado(), "ID", "DESCRIPCION");
                 ViewBag.tipousuario = new SelectList(TipoUsuario(), "ID", "DESCRIPCION");
+                ViewBag.sexo = new SelectList(Sexo(), "ID", "DESCRIPCION");
+                ViewBag.tablapostal = new SelectList(Tabla_postal(), "CODIGO", "DESCRIPCION");
                 return View();
             }
 
@@ -58,6 +74,10 @@ namespace MyPet.Controllers
                 usu.FECHA_INGRESO = reg.FECHA_INGRESO;
                 usu.ESTADO = reg.ESTADO;
                 usu.TIPO_USUARIOS = reg.TIPO_USUARIOS;
+                usu.ID_SEXO = reg.ID_SEXO;
+                usu.TELEFONO = reg.TELEFONO;
+                usu.CODIGO_POSTAL = reg.CODIGO_POSTAL;
+                usu.DIRECCION = reg.DIRECCION;
                 mp.usuario.Add(usu);
                 mp.SaveChanges();
                 return RedirectToAction("../Login");
@@ -67,6 +87,8 @@ namespace MyPet.Controllers
                 ModelState.AddModelError("", ex.Message);
                 ViewBag.estado = new SelectList(Estado(), "ID", "DESCRIPCION");
                 ViewBag.tipousuario = new SelectList(TipoUsuario(), "ID", "DESCRIPCION");
+                ViewBag.sexo = new SelectList(Sexo(), "ID", "DESCRIPCION");
+                ViewBag.tablapostal = new SelectList(Tabla_postal(), "CODIGO", "DESCRIPCION");
                 return View();
             }
         }
