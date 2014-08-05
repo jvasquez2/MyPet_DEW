@@ -257,6 +257,7 @@
     <Property Name="NOMBRE" Type="varchar" MaxLength="100" />
     <Property Name="APELLIDO_PATERNO" Type="varchar" MaxLength="100" />
     <Property Name="APELLIDO_MATERNO" Type="varchar" MaxLength="100" />
+    <Property Name="DIRECCION" Type="varchar" MaxLength="100" />
     <Property Name="EMAIL" Type="varchar" MaxLength="100" />
     <Property Name="FECHA_INGRESO" Type="datetime" />
     <Property Name="ESTADO" Type="int" />

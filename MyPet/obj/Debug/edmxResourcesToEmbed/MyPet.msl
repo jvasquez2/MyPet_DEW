@@ -169,6 +169,7 @@
           <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
           <ScalarProperty Name="APELLIDO_PATERNO" ColumnName="APELLIDO_PATERNO" />
           <ScalarProperty Name="APELLIDO_MATERNO" ColumnName="APELLIDO_MATERNO" />
+          <ScalarProperty Name="DIRECCION" ColumnName="DIRECCION" />
           <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
           <ScalarProperty Name="FECHA_INGRESO" ColumnName="FECHA_INGRESO" />
           <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />

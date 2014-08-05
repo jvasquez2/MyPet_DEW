@@ -1,0 +1,45 @@
+﻿@model MyPet.Models.Cliente
+@{
+    ViewBag.Title = "ActualizarCliente";
+
+    SelectList sexo = (SelectList)ViewBag.sexo;
+    SelectList tablapostal = (SelectList)ViewBag.tablapostal;
+}
+
+<h2>Actualizar cliente</h2>
+@using (Html.BeginForm()) 
+{
+    <fieldset>
+        <div>DNI: </div>
+        <div>@Html.EditorFor(Model=>Model.dni)</div>
+
+        <div>Nombre: </div>
+        <div>@Html.EditorFor(Model=>Model.nombre)</div>
+
+        <div>Direccion: </div>
+        <div>@Html.EditorFor(Model=>Model.direccion)</div>
+        
+        <div>Apellido paterno: </div>
+        <div>@Html.EditorFor(Model=>Model.apellido_paterno)</div>
+        
+        <div>Apellido paterno: </div>
+        <div>@Html.EditorFor(Model=>Model.apelido_materno)</div>	
+
+        <div>Distrito: </div>
+        <div>@Html.DropDownListFor(Model=>Model.codigo_postal, tablapostal)</div>
+
+        <div>Sexo: </div>
+        <div>@Html.DropDownListFor(Model=>Model.id_sexo, sexo)</div>
+
+        <div>Email: </div>
+        <div>@Html.EditorFor(Model=>Model.email)</div>
+
+        <div>Telefono: </div>
+        <div>@Html.EditorFor(Model=>Model.telefono)</div>
+
+        <div>@Html.ValidationSummary()</div>
+        <div><input type="submit" value="Actualizar"/></div>
+
+    </fieldset> 
+}
+@Html.ActionLink("Ir a la lista de clientes", "Listar");

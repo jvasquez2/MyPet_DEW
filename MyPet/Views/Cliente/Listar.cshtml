@@ -1,0 +1,39 @@
+﻿@model IEnumerable<MyPet.Models.Cliente>
+@{
+    ViewBag.Title = "Listar";
+}
+
+<h2>Mantenimiento de clientes</h2>
+@Html.ActionLink("Nuevo cliente","RegistroCliente")
+<br />
+<table>
+    <tr>
+        <td>DNI</td>
+        <td>NOMBRE</td>
+        <td>APELLIDO PATERNO</td>
+        <td>APELLIDO MATERNO</td>
+        <td>DIRECCION</td>
+        <td>CODIGO POSTAL</td>
+        <td>ID SEXO</td>
+        <td>EMAIL</td>
+        <td>TELEFONO</td>
+    </tr>
+    @foreach (var reg in Model) 
+    {
+        <tr>
+            <td>@reg.dni</td>
+            <td>@reg.nombre</td>
+            <td>@reg.apellido_paterno</td>
+            <td>@reg.apelido_materno</td>
+            <td>@reg.direccion</td>
+            <td>@reg.codigo_postal</td>
+            <td>@reg.id_sexo</td>
+            <td>@reg.email</td>
+            <td>@reg.telefono</td>
+            <td>@Html.ActionLink("Editar", "ActualizarCliente", new{dni = reg.dni})</td>
+            <td>@Html.ActionLink("Eliminar", "Eliminar", new {dni = reg.dni})</td>
+            <td>@Html.ActionLink("Agregar mascota", "AgregarMascota", new {dni = reg.dni})</td>
+            <td>@Html.ActionLink("Registrar cita", "RegistrarCita", new {dni = reg.dni})</td>
+        </tr>
+    }
+</table>

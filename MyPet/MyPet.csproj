@@ -408,6 +408,8 @@
     <Content Include="Views\Index\Inicio.cshtml" />
     <Content Include="Views\Usuario\RegistrarUsuario.cshtml" />
     <Content Include="Views\Mascota\RegistrarMascota.cshtml" />
+    <Content Include="Views\Cliente\Listar.cshtml" />
+    <Content Include="Views\Cliente\ActualizarCliente.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

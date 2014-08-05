@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="be9419372525483eb7313ec6416994f5" Name="Diagrama1">
+      <Diagram DiagramId="67e4b892df6e4707b7d37567bdf71422" Name="Diagrama1">
         <EntityTypeShape EntityType="mypetModel.boleta" Width="1.5" PointX="5.25" PointY="14.125" IsExpanded="true" />
         <EntityTypeShape EntityType="mypetModel.cita" Width="1.5" PointX="8.25" PointY="9" IsExpanded="true" />
         <EntityTypeShape EntityType="mypetModel.cliente" Width="1.5" PointX="3" PointY="8.5" IsExpanded="true" />
@@ -20,8 +20,8 @@
         <EntityTypeShape EntityType="mypetModel.sexo" Width="1.5" PointX="0.75" PointY="9.625" IsExpanded="true" />
         <EntityTypeShape EntityType="mypetModel.tabla_postal" Width="1.5" PointX="0.75" PointY="6.25" IsExpanded="true" />
         <EntityTypeShape EntityType="mypetModel.tipo_usuario" Width="1.5" PointX="3.75" PointY="17.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="mypetModel.usuario" Width="1.5" PointX="6" PointY="8.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="mypetModel.variables" Width="1.5" PointX="0.75" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="mypetModel.usuario" Width="1.5" PointX="6" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="mypetModel.variables" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
         <AssociationConnector Association="mypetModel.FK__boleta__DNI__2E1BDC42" ManuallyRouted="false" />
         <AssociationConnector Association="mypetModel.FK__detalle_b__NUMER__30F848ED" ManuallyRouted="false" />
         <AssociationConnector Association="mypetModel.FK__cita__403A8C7D" ManuallyRouted="false" />

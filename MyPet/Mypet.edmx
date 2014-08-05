@@ -262,6 +262,7 @@
           <Property Name="NOMBRE" Type="varchar" MaxLength="100" />
           <Property Name="APELLIDO_PATERNO" Type="varchar" MaxLength="100" />
           <Property Name="APELLIDO_MATERNO" Type="varchar" MaxLength="100" />
+          <Property Name="DIRECCION" Type="varchar" MaxLength="100" />
           <Property Name="EMAIL" Type="varchar" MaxLength="100" />
           <Property Name="FECHA_INGRESO" Type="datetime" />
           <Property Name="ESTADO" Type="int" />
@@ -820,6 +821,7 @@
           <Property Name="NOMBRE" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
           <Property Name="APELLIDO_PATERNO" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
           <Property Name="APELLIDO_MATERNO" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="DIRECCION" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
           <Property Name="EMAIL" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
           <Property Name="FECHA_INGRESO" Type="DateTime" Precision="3" />
           <Property Name="ESTADO" Type="Int32" />
@@ -1262,6 +1264,7 @@
                 <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
                 <ScalarProperty Name="APELLIDO_PATERNO" ColumnName="APELLIDO_PATERNO" />
                 <ScalarProperty Name="APELLIDO_MATERNO" ColumnName="APELLIDO_MATERNO" />
+                <ScalarProperty Name="DIRECCION" ColumnName="DIRECCION" />
                 <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
                 <ScalarProperty Name="FECHA_INGRESO" ColumnName="FECHA_INGRESO" />
                 <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
