@@ -410,7 +410,12 @@
     <Content Include="Views\Index\Inicio.cshtml" />
     <Content Include="Views\Usuario\RegistrarUsuario.cshtml" />
     <Content Include="Views\Mascota\RegistrarMascota.cshtml" />
+<<<<<<< HEAD
+    <Content Include="Views\Cliente\Listar.cshtml" />
+    <Content Include="Views\Cliente\ActualizarCliente.cshtml" />
+=======
     <Content Include="Views\Medico\RegistrarMedico.cshtml" />
+>>>>>>> 1dbba979edb058c8d4bca414d35936ca66d4d9fe
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

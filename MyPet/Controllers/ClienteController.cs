@@ -11,9 +11,22 @@ namespace MyPet.Controllers
     {
         mypetEntities mp = new mypetEntities();
 
-        public ActionResult Index()
+        public ActionResult Listar()
         {
-            return View();
+            var lista = from c in mp.cliente
+                        select new Cliente
+                        {
+                            dni = c.DNI,
+                            nombre = c.NOMBRE,
+                            apellido_paterno = c.APELLIDO_PATERNO,
+                            apelido_materno = c.APELLIDO_MATERNO,
+                            direccion = c.DIRECCION,
+                            codigo_postal = c.CODIGO_POSTAL,
+                            id_sexo = (Int32) c.ID_SEXO,
+                            email = c.EMAIL,
+                            telefono = c.TELEFONO
+                        };
+            return View(lista.ToList());
         }
 
         public List<sexo> Sexo()
@@ -91,11 +104,26 @@ namespace MyPet.Controllers
             
         }
 
-        public ActionResult ActualizarCliente() 
+        public ActionResult ActualizarCliente(string dni = null) 
         {
+            var registro = from c in mp.cliente
+                           where c.DNI == dni
+                           select new Cliente
+                           {
+                               dni = c.DNI,
+                               nombre= c.NOMBRE,
+                               apellido_paterno= c.APELLIDO_PATERNO,
+                               apelido_materno = c.APELLIDO_MATERNO,
+                               direccion = c.DIRECCION,
+                               codigo_postal = c.CODIGO_POSTAL,
+                               id_sexo = (Int32) c.ID_SEXO,
+                               telefono = c.TELEFONO,
+                               email = c.EMAIL
+                           };
+
             ViewBag.sexo = new SelectList(Sexo(), "ID", "DESCRIPCION");
             ViewBag.tablapostal = new SelectList(TablaPostal(), "CODIGO", "DESCRIPCION");
-            return View();
+            return View(registro.FirstOrDefault());
         }
 
         [HttpPost]
@@ -109,6 +137,16 @@ namespace MyPet.Controllers
             }
             try
             {
+                usuario usu = mp.usuario.Find(reg.dni);
+                usu.NOMBRE = reg.nombre;
+                usu.APELLIDO_PATERNO = reg.apellido_paterno;
+                usu.APELLIDO_MATERNO = reg.apelido_materno;
+                usu.DIRECCION = reg.direccion;
+                usu.CODIGO_POSTAL = reg.codigo_postal;
+                usu.ID_SEXO = reg.id_sexo;
+                usu.EMAIL = reg.email;
+                usu.TELEFONO = reg.telefono;
+
                 cliente cli = mp.cliente.Find(reg.dni);
                 cli.DNI = reg.dni;
                 cli.NOMBRE = reg.nombre;
@@ -120,7 +158,7 @@ namespace MyPet.Controllers
                 cli.EMAIL = reg.email;
                 cli.TELEFONO = reg.telefono;
                 mp.SaveChanges();
-                return RedirectToAction("../Login");
+                return RedirectToAction("Listar");
             }
             catch (Exception ex)
             {

@@ -18,5 +18,6 @@ namespace MyPet.Models
         public int id_sexo { get; set; }
         public string email { get; set; }
         public string telefono { get; set; }
+        public string estado { get; set; }
     }
 }
